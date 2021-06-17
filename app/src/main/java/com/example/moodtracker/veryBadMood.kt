@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MotionEvent
+import java.time.LocalDateTime
 
 class veryBadMood : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -30,6 +31,10 @@ class veryBadMood : AppCompatActivity() {
 
             }
         }
+        day1[0] = ("Very Bad")
+        day1[1] = ("34fg")
+        day1[2] = (" Blah blah should be empty for comments")
         return false
+
     }
 }
