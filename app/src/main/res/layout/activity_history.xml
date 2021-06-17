@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:id="@+id/day7"
+        android:layout_width="420dp"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:background="@android:color/holo_purple"
+        android:gravity="center"
+        android:layout_weight="1"
+
+        >
+
+        <TextView
+            android:id="@+id/weekAgoTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="One Week Ago" />
+
+        <ImageView
+            android:id="@+id/comment7DaysAgo"
+            android:layout_width="93dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/ic_comment_black_48px" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/day6"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:background="@android:color/holo_orange_dark"
+        android:gravity="center"
+        android:layout_weight="1">
+
+        <TextView
+            android:id="@+id/sixDaysAgoTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Six Days Ago" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/day5"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:background="@android:color/holo_green_light"
+        android:gravity="center"
+        android:layout_weight="1">
+
+        <TextView
+            android:id="@+id/fiveDaysAgoTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Five Days Ago" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/day4"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:background="@android:color/darker_gray"
+        android:gravity="center"
+        android:layout_weight="1">
+
+
+        <TextView
+            android:id="@+id/fourDaysAgoTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Four Days Ago" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/day3"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:background="@android:color/holo_red_dark"
+        android:gravity="center"
+        android:layout_weight="1">
+
+        <TextView
+            android:id="@+id/threeDaysAgoTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Three Days Ago" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/day2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:background="@android:color/black"
+        android:gravity="center"
+        android:layout_weight="1">
+
+        <TextView
+            android:id="@+id/twoDaysAgoTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Two Days Ago" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/day1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:background="@android:color/white"
+        android:gravity="center"
+        android:layout_weight="1">
+
+        <TextView
+            android:id="@+id/todayTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Today" />
+    </LinearLayout>
+
+
+</LinearLayout>

@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".veryBadMood"></activity>
+        <activity android:name=".history"></activity>
+        <activity android:name=".veryBadMood" />
         <activity android:name=".verryBadMood" />
         <activity android:name=".badMood" />
         <activity android:name=".greatMood" />
