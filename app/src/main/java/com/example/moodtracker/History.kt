@@ -12,7 +12,7 @@ import java.io.*
 import java.lang.System.load
 import java.nio.file.Files.write
 
-class history : AppCompatActivity() {
+class History : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_history)

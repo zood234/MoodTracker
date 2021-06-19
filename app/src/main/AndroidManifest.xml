@@ -11,11 +11,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".history"></activity>
-        <activity android:name=".veryBadMood" />
-        <activity android:name=".badMood" />
-        <activity android:name=".greatMood" />
-        <activity android:name=".goodMood" />
+        <activity android:name=".History"></activity>
+        <activity android:name=".VeryBadMood" />
+        <activity android:name=".BadMood" />
+        <activity android:name=".GreatMood" />
+        <activity android:name=".GoodMood" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

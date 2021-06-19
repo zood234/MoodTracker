@@ -6,13 +6,11 @@ import android.os.Bundle
 import android.util.Log
 import android.view.MotionEvent
 import android.widget.EditText
-import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import kotlinx.android.synthetic.main.activity_bad_mood.*
 import kotlinx.android.synthetic.main.activity_bad_mood.commentIV
-import kotlinx.android.synthetic.main.activity_very_bad_mood.*
 
-class badMood : AppCompatActivity() {
+class BadMood : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_bad_mood)
@@ -20,7 +18,7 @@ class badMood : AppCompatActivity() {
         Days.currentDay[0] = "Angry"
 
         historyBadIV.setOnClickListener {
-            val intent = Intent(this, history::class.java)
+            val intent = Intent(this, History::class.java)
             startActivity(intent)
 
         }
@@ -58,11 +56,11 @@ class badMood : AppCompatActivity() {
                 x2 = touchevent.x
                 y2 = touchevent.y
                 if (y1 < y2) {
-                    val i = Intent(this@badMood, MainActivity::class.java)
+                    val i = Intent(this@BadMood, MainActivity::class.java)
                     startActivity(i)
                 }
                 if (y1 > y2) {
-                    val i = Intent(this@badMood, veryBadMood::class.java)
+                    val i = Intent(this@BadMood, VeryBadMood::class.java)
                     startActivity(i)
                 }
             }

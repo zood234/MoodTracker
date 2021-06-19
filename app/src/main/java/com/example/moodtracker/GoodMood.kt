@@ -6,19 +6,20 @@ import android.os.Bundle
 import android.util.Log
 import android.view.MotionEvent
 import android.widget.EditText
+import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
-import kotlinx.android.synthetic.main.activity_bad_mood.*
 import kotlinx.android.synthetic.main.activity_bad_mood.commentIV
 import kotlinx.android.synthetic.main.activity_good_mood.*
-import kotlinx.android.synthetic.main.activity_great_mood.*
 
-class greatMood : AppCompatActivity() {
+
+class GoodMood : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_great_mood)
-        Days.currentDay[0] = "Great"
-        historyGreatIV.setOnClickListener {
-            val intent = Intent(this, history::class.java)
+        setContentView(R.layout.activity_good_mood)
+
+        Days.currentDay[0] = "Happy"
+        historyGoodIV.setOnClickListener {
+            val intent = Intent(this, History::class.java)
             startActivity(intent)
         }
 
@@ -39,6 +40,7 @@ class greatMood : AppCompatActivity() {
                 show()
             }
         }
+
     }
 
     override fun onTouchEvent(touchevent: MotionEvent): Boolean {
@@ -53,8 +55,12 @@ class greatMood : AppCompatActivity() {
                 x2 = touchevent.x
                 y2 = touchevent.y
 
+                if (y1 < y2) {
+                    val i = Intent(this@GoodMood, GreatMood::class.java)
+                    startActivity(i)
+                }
                 if (y1 > y2) {
-                    val i = Intent(this@greatMood, goodMood::class.java)
+                    val i = Intent(this@GoodMood, MainActivity::class.java)
                     startActivity(i)
                 }
             }
@@ -62,4 +68,7 @@ class greatMood : AppCompatActivity() {
         return false
     }
 
+    fun test(){
+        Toast.makeText(this, "Test Worked", Toast.LENGTH_LONG).show()
+    }
 }

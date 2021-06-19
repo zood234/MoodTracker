@@ -1,13 +1,11 @@
 package com.example.moodtracker
 
 import android.content.Intent
-import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.MotionEvent
 import android.widget.EditText
-import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import kotlinx.android.synthetic.main.activity_main.*
 import java.io.*
@@ -16,7 +14,7 @@ import java.time.format.DateTimeFormatter
 
 internal var myExternalFile: File?=null
 
-val Days = days()
+val Days = Day()
 var x1 = 1f
 var y1 = 1f
 var x2 = 1f
@@ -38,7 +36,7 @@ class MainActivity : AppCompatActivity() {
          write(turnAllArraysString())
 
         historyIV.setOnClickListener {
-            val intent = Intent(this, history::class.java)
+            val intent = Intent(this, History::class.java)
             startActivity(intent)
         }
 
@@ -75,11 +73,11 @@ class MainActivity : AppCompatActivity() {
                 y2 = touchevent.y
 
                 if (y1 < y2) {
-                    val i = Intent(this@MainActivity, goodMood::class.java)
+                    val i = Intent(this@MainActivity, GoodMood::class.java)
                     startActivity(i)
                 }
                 if (y1 > y2) {
-                    val i = Intent(this@MainActivity, badMood::class.java)
+                    val i = Intent(this@MainActivity, BadMood::class.java)
                     startActivity(i)
                }
             }

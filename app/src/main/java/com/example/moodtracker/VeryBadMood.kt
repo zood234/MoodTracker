@@ -6,25 +6,22 @@ import android.os.Bundle
 import android.util.Log
 import android.view.MotionEvent
 import android.widget.EditText
-import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
-import kotlinx.android.synthetic.main.activity_bad_mood.*
 import kotlinx.android.synthetic.main.activity_bad_mood.commentIV
-import kotlinx.android.synthetic.main.activity_good_mood.*
-import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.activity_very_bad_mood.*
 
-
-class goodMood : AppCompatActivity() {
+class VeryBadMood : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_good_mood)
+        setContentView(R.layout.activity_very_bad_mood)
 
-        Days.currentDay[0] = "Happy"
-        historyGoodIV.setOnClickListener {
-            val intent = Intent(this, history::class.java)
+        Days.currentDay[0] = "VAngry"
+
+        historyVBadIV.setOnClickListener {
+            val intent = Intent(this, History::class.java)
             startActivity(intent)
-        }
 
+        }
         commentIV.setOnClickListener {
             val builder = AlertDialog.Builder(this)
             val inflater = layoutInflater
@@ -43,6 +40,7 @@ class goodMood : AppCompatActivity() {
             }
         }
 
+
     }
 
     override fun onTouchEvent(touchevent: MotionEvent): Boolean {
@@ -58,19 +56,13 @@ class goodMood : AppCompatActivity() {
                 y2 = touchevent.y
 
                 if (y1 < y2) {
-                    val i = Intent(this@goodMood, greatMood::class.java)
+                    val i = Intent(this@VeryBadMood, BadMood::class.java)
                     startActivity(i)
                 }
-                if (y1 > y2) {
-                    val i = Intent(this@goodMood, MainActivity::class.java)
-                    startActivity(i)
-                }
+
             }
         }
         return false
-    }
 
-    fun test(){
-        Toast.makeText(this, "Test Worked", Toast.LENGTH_LONG).show()
     }
 }

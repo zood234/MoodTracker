@@ -2,7 +2,7 @@ package com.example.moodtracker
 
 import android.view.View
 
-class days {
+class Day {
     var day1 = arrayOf("Angry", "03/06/21", "Really Happy today")
     var day2 = arrayOf("Great", "03/06/21", "Really  Sad today")
     var day3 = arrayOf("Angry", "03/06/21", "")
