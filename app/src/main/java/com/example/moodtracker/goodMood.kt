@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MotionEvent
+import android.widget.Toast
 
 
 class goodMood : AppCompatActivity() {
@@ -36,5 +37,9 @@ class goodMood : AppCompatActivity() {
             }
         }
         return false
+    }
+
+    fun test(){
+        Toast.makeText(this, "Test Worked", Toast.LENGTH_LONG).show()
     }
 }

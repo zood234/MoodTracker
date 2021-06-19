@@ -31,9 +31,6 @@ class veryBadMood : AppCompatActivity() {
 
             }
         }
-        day1[0] = ("Very Bad")
-        day1[1] = ("34fg")
-        day1[2] = (" Blah blah should be empty for comments")
         return false
 
     }

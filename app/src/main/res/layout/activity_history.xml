@@ -8,7 +8,7 @@
     tools:context=".MainActivity">
 
     <LinearLayout
-        android:id="@+id/day7"
+        android:id="@+id/day7Layout"
         android:layout_width="420dp"
         android:layout_height="match_parent"
         android:orientation="horizontal"
@@ -34,7 +34,7 @@
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/day6"
+        android:id="@+id/day6Layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="horizontal"
@@ -49,11 +49,18 @@
             android:layout_weight="1"
             android:text="Six Days Ago" />
 
+        <ImageView
+            android:id="@+id/comment6DaysAgo"
+            android:layout_width="93dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/ic_comment_black_48px" />
+
 
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/day5"
+        android:id="@+id/day5Layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="horizontal"
@@ -68,16 +75,17 @@
             android:layout_weight="1"
             android:text="Five Days Ago" />
 
-        <TextView
-            android:id="@+id/deleteOnceDone"
-            android:layout_width="wrap_content"
+        <ImageView
+            android:id="@+id/comment5DaysAgo"
+            android:layout_width="93dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="TextView" />
+            app:srcCompat="@drawable/ic_comment_black_48px" />
+
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/day4"
+        android:id="@+id/day4Layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="horizontal"
@@ -92,10 +100,17 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="Four Days Ago" />
+
+        <ImageView
+            android:id="@+id/comment4DaysAgo"
+            android:layout_width="93dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/ic_comment_black_48px" />
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/day3"
+        android:id="@+id/day3Layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="horizontal"
@@ -109,10 +124,17 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="Three Days Ago" />
+
+        <ImageView
+            android:id="@+id/comment3DaysAgo"
+            android:layout_width="93dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/ic_comment_black_48px" />
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/day2"
+        android:id="@+id/day2Layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="horizontal"
@@ -126,14 +148,21 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="Two Days Ago" />
+
+        <ImageView
+            android:id="@+id/comment2DaysAgo"
+            android:layout_width="93dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/ic_comment_black_48px" />
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/day1"
+        android:id="@+id/day1Layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="horizontal"
-        android:background="@android:color/white"
+        android:background="@android:color/holo_orange_dark"
         android:gravity="center"
         android:layout_weight="1">
 
@@ -143,6 +172,13 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="Today" />
+
+        <ImageView
+            android:id="@+id/commentToday"
+            android:layout_width="93dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/ic_comment_black_48px" />
     </LinearLayout>
 
 

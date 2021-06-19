@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MotionEvent
+import android.widget.Toast
 
 class badMood : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -32,6 +33,9 @@ class badMood : AppCompatActivity() {
                 }
             }
         }
+      //  Toast.makeText(this, Days.day1[1], Toast.LENGTH_LONG).show()
+
         return false
+
     }
 }

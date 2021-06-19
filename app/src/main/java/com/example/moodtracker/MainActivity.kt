@@ -5,35 +5,39 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MotionEvent
 import android.widget.Toast
+import kotlinx.android.synthetic.main.activity_main.*
 import java.io.*
+internal var myExternalFile: File?=null
 
+val Days = days()
 var x1 = 1f
 var y1 = 1f
 var x2 = 1f
 var y2 = 1f
-val fileName ="Data"
-internal var myExternalFile: File?=null
-private val filepath = "MyFileStorage"
 
-var day1 = arrayOf("Happy", "03/06/21", "Not Worked")
-var day2 = arrayOf("Sad", "03/06/21", "Really  Sad today")
-var day3 = arrayOf("Angry", "03/06/21", "Really  Angry today")
-var day4 = arrayOf("Happy", "03/06/21", "Really  Happy today")
-var day5 = arrayOf("Happy", "03/06/21", "Really  Happy today")
-var day6 = arrayOf("Happy", "03/06/21", "Really  Happy today")
-var day7 = arrayOf("Happy", "03/06/21", "Really  Happy today")
+
+
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        historyIV.setOnClickListener {
+            val intent = Intent(this, history::class.java)
+            startActivity(intent)
 
+        }
 
     }
 
     override fun onTouchEvent(touchevent: MotionEvent): Boolean {
-        write("Holy Crap This worked what now")
-        load()
+//        val History = history()
+//        History.write("Holy Crap This worked what now")
+//     History.load()
+
+//        val GoodMood = goodMood()
+//        GoodMood.test()
+
         when (touchevent.action) {
             MotionEvent.ACTION_DOWN -> {
                 x1 = touchevent.x
@@ -57,6 +61,8 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun load() : String{
+        val filepath = "MyFileStorage"
+        val fileName ="Data"
         val stringBuilder: StringBuilder = StringBuilder()
         myExternalFile = File(getExternalFilesDir(filepath),fileName)
         if(fileName.toString()!=null && fileName.toString().trim()!=""){
@@ -75,9 +81,10 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun write(writeToFile: String){
+        val filepath = "MyFileStorage"
+        val fileName ="Data"
         val stringBuilder: StringBuilder = StringBuilder()
         val fileData1 = writeToFile
-
 
         myExternalFile = File(getExternalFilesDir(filepath), fileName)
         try {
@@ -90,7 +97,5 @@ class MainActivity : AppCompatActivity() {
         //    Toast.makeText(applicationContext,"data save", Toast.LENGTH_SHORT).show()
         Toast.makeText(this, stringBuilder.toString(), Toast.LENGTH_LONG).show()
     }
-
-
 
 }
