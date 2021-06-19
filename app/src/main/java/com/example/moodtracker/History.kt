@@ -49,7 +49,7 @@ class History : AppCompatActivity() {
 
     }
 
-fun daysMover() {
+private fun daysMover() {
 
     //checks to see if you have used the app today or not
     if (Days.currentDay[1] == Days.day1[1]) {
@@ -74,7 +74,7 @@ fun daysMover() {
         }
     }
 }
-    fun assignToday(){
+    private fun assignToday(){
         if(Days.day1[2] == "") {
             commentToday.visibility = View.INVISIBLE
         }
@@ -105,13 +105,13 @@ fun daysMover() {
         }
     }
 
-    fun assignDay2(){
+    private fun assignDay2(){
         if(Days.day2[2] == "") {
             comment2DaysAgo.visibility = View.INVISIBLE
         }
 
         if( Days.day2[0] == "Great"){
-            day2Layout.getLayoutParams().width = 1080
+            day2Layout.layoutParams.width = 1080
             day2Layout.setBackgroundColor(Color.parseColor("#FFFFEB3B"))
         }
 
@@ -121,17 +121,17 @@ fun daysMover() {
         }
 
         if( Days.day2[0] == "Normal"){
-            day2Layout.getLayoutParams().width = 720
+            day2Layout.layoutParams.width = 720
             day2Layout.setBackgroundColor(Color.parseColor("#FF33B5E5"))
         }
 
         if( Days.day2[0] == "Angry"){
-            day2Layout.getLayoutParams().width = 540
+            day2Layout.layoutParams.width = 540
             day2Layout.setBackgroundColor(Color.parseColor("#FFBEBEBE"))
         }
 
         if( Days.day2[0] == "VAngry"){
-            day2Layout.getLayoutParams().width = 360
+            day2Layout.layoutParams.width = 360
             day2Layout.setBackgroundColor(Color.parseColor("#FFCC0000"))
         }
     }
@@ -141,158 +141,148 @@ fun daysMover() {
             comment3DaysAgo.visibility = View.INVISIBLE
         }
         if( Days.day3[0] == "Great"){
-            day3Layout.getLayoutParams().width = 1080
+            day3Layout.layoutParams.width = 1080
             day3Layout.setBackgroundColor(Color.parseColor("#FFFFEB3B"))
         }
 
         if( Days.day3[0] == "Happy"){
-            day3Layout.getLayoutParams().width = 900
+            day3Layout.layoutParams.width = 900
             day3Layout.setBackgroundColor(Color.parseColor("#FF99CC00"))
         }
 
         if( Days.day3[0] == "Normal"){
-            day3Layout.getLayoutParams().width = 720
+            day3Layout.layoutParams.width = 720
             day3Layout.setBackgroundColor(Color.parseColor("#FF33B5E5"))
         }
 
         if( Days.day3[0] == "Angry"){
-            day3Layout.getLayoutParams().width = 540
+            day3Layout.layoutParams.width = 540
             day3Layout.setBackgroundColor(Color.parseColor("#FFBEBEBE"))
         }
 
         if( Days.day3[0] == "VAngry"){
-            day3Layout.getLayoutParams().width = 360
+            day3Layout.layoutParams.width = 360
             day3Layout.setBackgroundColor(Color.parseColor("#FFCC0000"))
         }
     }
 
-    fun assignDay4(){
+    private fun assignDay4(){
 
         if(Days.day4[2] == "") {
             comment4DaysAgo.visibility = View.INVISIBLE
         }
         if( Days.day4[0] == "Great"){
-            day4Layout.getLayoutParams().width = 1080
+            day4Layout.layoutParams.width = 1080
             day4Layout.setBackgroundColor(Color.parseColor("#FFFFEB3B"))
         }
 
         if( Days.day4[0] == "Happy"){
-            day4Layout.getLayoutParams().width = 900
+            day4Layout.layoutParams.width = 900
             day4Layout.setBackgroundColor(Color.parseColor("#FF99CC00"))
         }
 
         if( Days.day4[0] == "Normal"){
-            day4Layout.getLayoutParams().width = 720
+            day4Layout.layoutParams.width = 720
             day4Layout.setBackgroundColor(Color.parseColor("#FF33B5E5"))
         }
 
         if( Days.day4[0] == "Angry"){
-            day4Layout.getLayoutParams().width = 540
+            day4Layout.layoutParams.width = 540
             day4Layout.setBackgroundColor(Color.parseColor("#FFBEBEBE"))
         }
 
         if( Days.day4[0] == "VAngry"){
-            day4Layout.getLayoutParams().width = 360
+            day4Layout.layoutParams.width = 360
             day4Layout.setBackgroundColor(Color.parseColor("#FFCC0000"))
         }
     }
 
 
-    fun assignDay5(){
+    private fun assignDay5(){
 
         if(Days.day5[2] == "") {
             comment5DaysAgo.visibility = View.INVISIBLE
         }
         if( Days.day5[0] == "Great"){
-            day5Layout.getLayoutParams().width = 1080
+            day5Layout.layoutParams.width = 1080
             day5Layout.setBackgroundColor(Color.parseColor("#FFFFEB3B"))
         }
 
         if( Days.day5[0] == "Happy"){
-            day5Layout.getLayoutParams().width = 900
+            day5Layout.layoutParams.width = 900
             day5Layout.setBackgroundColor(Color.parseColor("#FF99CC00"))
         }
 
         if( Days.day5[0] == "Normal"){
-            day5Layout.getLayoutParams().width = 720
+            day5Layout.layoutParams.width = 720
             day5Layout.setBackgroundColor(Color.parseColor("#FF33B5E5"))
         }
 
         if( Days.day5[0] == "Angry"){
-            day5Layout.getLayoutParams().width = 540
+            day5Layout.layoutParams.width = 540
             day5Layout.setBackgroundColor(Color.parseColor("#FFBEBEBE"))
         }
 
         if( Days.day5[0] == "VAngry"){
-            day5Layout.getLayoutParams().width = 360
+            day5Layout.layoutParams.width = 360
             day5Layout.setBackgroundColor(Color.parseColor("#FFCC0000"))
         }
     }
 
-    fun assignDay6(){
+    private fun assignDay6(){
 
         if(Days.day6[2] == "") {
             comment6DaysAgo.visibility = View.INVISIBLE
         }
         if( Days.day6[0] == "Great"){
-            day6Layout.getLayoutParams().width = 1080
+            day6Layout.layoutParams.width = 1080
             day6Layout.setBackgroundColor(Color.parseColor("#FFFFEB3B"))
         }
 
         if( Days.day6[0] == "Happy"){
-            day6Layout.getLayoutParams().width = 900
+            day6Layout.layoutParams.width = 900
             day6Layout.setBackgroundColor(Color.parseColor("#FF99CC00"))
         }
 
         if( Days.day6[0] == "Normal"){
-            day6Layout.getLayoutParams().width = 720
+            day6Layout.layoutParams.width = 720
             day6Layout.setBackgroundColor(Color.parseColor("#FF33B5E5"))
         }
 
         if( Days.day6[0] == "Angry"){
-            day6Layout.getLayoutParams().width = 540
+            day6Layout.layoutParams.width = 540
             day6Layout.setBackgroundColor(Color.parseColor("#FFBEBEBE"))
         }
 
         if( Days.day6[0] == "VAngry"){
-            day6Layout.getLayoutParams().width = 360
+            day6Layout.layoutParams.width = 360
             day6Layout.setBackgroundColor(Color.parseColor("#FFCC0000"))
         }
     }
 
-    fun assignDay7(){
-
+    private fun assignDay7(){
         if(Days.day7[2] == "") {
             comment7DaysAgo.visibility = View.INVISIBLE
         }
-
         if( Days.day7[0] == "Great"){
-            day7Layout.getLayoutParams().width = 1080
+            day7Layout.layoutParams.width = 1080
             day7Layout.setBackgroundColor(Color.parseColor("#FFFFEB3B"))
         }
-
         if( Days.day7[0] == "Happy"){
-            day7Layout.getLayoutParams().width = 900
+            day7Layout.layoutParams.width = 900
             day7Layout.setBackgroundColor(Color.parseColor("#FF99CC00"))
         }
-
         if( Days.day7[0] == "Normal"){
-            day7Layout.getLayoutParams().width = 720
+            day7Layout.layoutParams.width = 720
             day7Layout.setBackgroundColor(Color.parseColor("#FF33B5E5"))
         }
-
         if( Days.day7[0] == "Angry"){
-            day7Layout.getLayoutParams().width = 540
+            day7Layout.layoutParams.width = 540
             day7Layout.setBackgroundColor(Color.parseColor("#FFBEBEBE"))
         }
-
         if( Days.day7[0] == "VAngry"){
-            day7Layout.getLayoutParams().width = 360
+            day7Layout.layoutParams.width = 360
             day7Layout.setBackgroundColor(Color.parseColor("#FFCC0000"))
         }
     }
-
-
-
-
 }

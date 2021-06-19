@@ -29,12 +29,8 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         assignCurrentDate()
         Days.currentDay[0] = "Normal"
-
-       //Toast.makeText(this, load(), Toast.LENGTH_LONG).show()
         turnStringIntoArray()
-     //   Toast.makeText(this, Days.day1[2] , Toast.LENGTH_LONG).show()
-         write(turnAllArraysString())
-
+        write(turnAllArraysString())
         historyIV.setOnClickListener {
             val intent = Intent(this, History::class.java)
             startActivity(intent)
@@ -49,10 +45,10 @@ class MainActivity : AppCompatActivity() {
             val editText = dialogLayout.findViewById<EditText>(R.id.commentEditText)
             with(builder){
                 setTitle("Enter Your Comment")
-                setPositiveButton("Submit"){ dialog, which ->
+                setPositiveButton("Submit"){ _, _ ->
                     Days.currentDay[2] = editText.text.toString()
                 }
-                setNegativeButton("Cancel"){dialog, which ->
+                setNegativeButton("Cancel"){ _, _ ->
                     Log.d("main", "Negative Button Clicked")
                 }
                 setView(dialogLayout)
@@ -84,18 +80,18 @@ class MainActivity : AppCompatActivity() {
         }
         return false
     }
-fun assignCurrentDate(){
+private fun assignCurrentDate(){
     val current = LocalDateTime.now()
     val formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy")
     Days.currentDay[1]  = current.format(formatter)
  //   Toast.makeText(this, Days.currentDay[1].toString(), Toast.LENGTH_LONG).show()
 }
-    fun load() : String{
+    private fun load() : String{
         val filepath = "MyFileStorage"
         val fileName ="Data"
         val stringBuilder: StringBuilder = StringBuilder()
         myExternalFile = File(getExternalFilesDir(filepath),fileName)
-        if(fileName.toString()!=null && fileName.toString().trim()!=""){
+      //  if(fileName.toString()!=null && fileName.toString().trim()!=""){
             var fileInputStream = FileInputStream(myExternalFile)
             var inputStreamReader: InputStreamReader = InputStreamReader(fileInputStream)
             val bufferedReader: BufferedReader = BufferedReader(inputStreamReader)
@@ -105,13 +101,13 @@ fun assignCurrentDate(){
             }
             fileInputStream.close()
 
-        }
+     //   }
        // Toast.makeText(this, stringBuilder.toString(), Toast.LENGTH_LONG).show()
         return stringBuilder.toString()
     }
 
 
-    fun turnStringIntoArray(){
+    private fun turnStringIntoArray(){
         val splitString = load().split("?").toTypedArray()
         Days.day1 = splitString[0].split("-").toTypedArray()
         Days.day2 = splitString[1].split("-").toTypedArray()
@@ -123,7 +119,7 @@ fun assignCurrentDate(){
     }
 
 
-    fun  turnAllArraysString() : String{
+    private fun  turnAllArraysString() : String{
         val fileData = Days.day1[0] + "-" + Days.day1[1] + "-" + Days.day1[2]+ "?" +
         Days.day2[0] + "-" + Days.day2[1] + "-" + Days.day2[2]+ "?" +
         Days.day3[0] + "-" + Days.day3[1] + "-" + Days.day3[2]+ "?" +
@@ -135,10 +131,9 @@ fun assignCurrentDate(){
         return fileData
     }
 
-    fun write(writeToFile: String){
+    private fun write(writeToFile: String){
         val filepath = "MyFileStorage"
         val fileName ="Data"
-        val stringBuilder: StringBuilder = StringBuilder()
         val fileData1 = writeToFile
 
         myExternalFile = File(getExternalFilesDir(filepath), fileName)

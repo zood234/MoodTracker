@@ -21,11 +21,4 @@ class Day {
 
 
     var currentDay = arrayOf("", "", "")
-
-
-//    var emotion = arrayOf("Happy", "Sad", "Angry", "VAngry", "Normal", "Happy", "Great")
-//    var date = arrayOf("18/06/21", "17/06/21", "16/02/21", "15/06/21", "14/06/21", "13/06/21", "12/06/21")
-//    var coment = arrayOf("Some Comment", "Another Comment", "More Comment", "Even more Coment", "Plus other comment", "Other Coment", "Even More")
-
-
 }
