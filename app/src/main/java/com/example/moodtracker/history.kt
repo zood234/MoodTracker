@@ -12,8 +12,6 @@ import java.io.*
 import java.lang.System.load
 import java.nio.file.Files.write
 
-//Create function that moves currentDay to day 1 and move all the days up and then delete day 7
-
 class history : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -83,27 +81,27 @@ fun daysMover() {
 
         if( Days.day1[0] == "Great"){
             day1Layout.layoutParams.width = 1080
-            day1Layout.setBackgroundColor(Color.YELLOW)
+            day1Layout.setBackgroundColor(Color.parseColor("#FFFFEB3B"))
         }
 
         if( Days.day1[0] == "Happy"){
             day1Layout.layoutParams.width = 900
-            day1Layout.setBackgroundColor(Color.GREEN)
+            day1Layout.setBackgroundColor(Color.parseColor("#FF99CC00"))
         }
 
         if( Days.day1[0] == "Normal"){
             day1Layout.layoutParams.width = 720
-            day1Layout.setBackgroundColor(Color.BLUE)
+            day1Layout.setBackgroundColor(Color.parseColor("#FF33B5E5"))
         }
 
         if( Days.day1[0] == "Angry"){
             day1Layout.layoutParams.width = 540
-            day1Layout.setBackgroundColor(Color.GRAY)
+            day1Layout.setBackgroundColor(Color.parseColor("#FFBEBEBE"))
         }
 
         if( Days.day1[0] == "VAngry"){
             day1Layout.layoutParams.width = 360
-            day1Layout.setBackgroundColor(Color.RED)
+            day1Layout.setBackgroundColor(Color.parseColor("#FFCC0000"))
         }
     }
 
@@ -114,27 +112,27 @@ fun daysMover() {
 
         if( Days.day2[0] == "Great"){
             day2Layout.getLayoutParams().width = 1080
-            day2Layout.setBackgroundColor(Color.YELLOW)
+            day2Layout.setBackgroundColor(Color.parseColor("#FFFFEB3B"))
         }
 
         if( Days.day2[0] == "Happy"){
             day2Layout.getLayoutParams().width = 900
-            day2Layout.setBackgroundColor(Color.GREEN)
+            day2Layout.setBackgroundColor(Color.parseColor("#FF99CC00"))
         }
 
         if( Days.day2[0] == "Normal"){
             day2Layout.getLayoutParams().width = 720
-            day2Layout.setBackgroundColor(Color.BLUE)
+            day2Layout.setBackgroundColor(Color.parseColor("#FF33B5E5"))
         }
 
         if( Days.day2[0] == "Angry"){
             day2Layout.getLayoutParams().width = 540
-            day2Layout.setBackgroundColor(Color.GRAY)
+            day2Layout.setBackgroundColor(Color.parseColor("#FFBEBEBE"))
         }
 
         if( Days.day2[0] == "VAngry"){
             day2Layout.getLayoutParams().width = 360
-            day2Layout.setBackgroundColor(Color.RED)
+            day2Layout.setBackgroundColor(Color.parseColor("#FFCC0000"))
         }
     }
 
@@ -144,27 +142,27 @@ fun daysMover() {
         }
         if( Days.day3[0] == "Great"){
             day3Layout.getLayoutParams().width = 1080
-            day3Layout.setBackgroundColor(Color.YELLOW)
+            day3Layout.setBackgroundColor(Color.parseColor("#FFFFEB3B"))
         }
 
         if( Days.day3[0] == "Happy"){
             day3Layout.getLayoutParams().width = 900
-            day3Layout.setBackgroundColor(Color.GREEN)
+            day3Layout.setBackgroundColor(Color.parseColor("#FF99CC00"))
         }
 
         if( Days.day3[0] == "Normal"){
             day3Layout.getLayoutParams().width = 720
-            day3Layout.setBackgroundColor(Color.BLUE)
+            day3Layout.setBackgroundColor(Color.parseColor("#FF33B5E5"))
         }
 
         if( Days.day3[0] == "Angry"){
             day3Layout.getLayoutParams().width = 540
-            day3Layout.setBackgroundColor(Color.GRAY)
+            day3Layout.setBackgroundColor(Color.parseColor("#FFBEBEBE"))
         }
 
         if( Days.day3[0] == "VAngry"){
             day3Layout.getLayoutParams().width = 360
-            day3Layout.setBackgroundColor(Color.RED)
+            day3Layout.setBackgroundColor(Color.parseColor("#FFCC0000"))
         }
     }
 
@@ -175,27 +173,27 @@ fun daysMover() {
         }
         if( Days.day4[0] == "Great"){
             day4Layout.getLayoutParams().width = 1080
-            day4Layout.setBackgroundColor(Color.YELLOW)
+            day4Layout.setBackgroundColor(Color.parseColor("#FFFFEB3B"))
         }
 
         if( Days.day4[0] == "Happy"){
             day4Layout.getLayoutParams().width = 900
-            day4Layout.setBackgroundColor(Color.GREEN)
+            day4Layout.setBackgroundColor(Color.parseColor("#FF99CC00"))
         }
 
         if( Days.day4[0] == "Normal"){
             day4Layout.getLayoutParams().width = 720
-            day4Layout.setBackgroundColor(Color.BLUE)
+            day4Layout.setBackgroundColor(Color.parseColor("#FF33B5E5"))
         }
 
         if( Days.day4[0] == "Angry"){
             day4Layout.getLayoutParams().width = 540
-            day4Layout.setBackgroundColor(Color.GRAY)
+            day4Layout.setBackgroundColor(Color.parseColor("#FFBEBEBE"))
         }
 
         if( Days.day4[0] == "VAngry"){
             day4Layout.getLayoutParams().width = 360
-            day4Layout.setBackgroundColor(Color.RED)
+            day4Layout.setBackgroundColor(Color.parseColor("#FFCC0000"))
         }
     }
 
@@ -207,27 +205,27 @@ fun daysMover() {
         }
         if( Days.day5[0] == "Great"){
             day5Layout.getLayoutParams().width = 1080
-            day5Layout.setBackgroundColor(Color.YELLOW)
+            day5Layout.setBackgroundColor(Color.parseColor("#FFFFEB3B"))
         }
 
         if( Days.day5[0] == "Happy"){
             day5Layout.getLayoutParams().width = 900
-            day5Layout.setBackgroundColor(Color.GREEN)
+            day5Layout.setBackgroundColor(Color.parseColor("#FF99CC00"))
         }
 
         if( Days.day5[0] == "Normal"){
             day5Layout.getLayoutParams().width = 720
-            day5Layout.setBackgroundColor(Color.BLUE)
+            day5Layout.setBackgroundColor(Color.parseColor("#FF33B5E5"))
         }
 
         if( Days.day5[0] == "Angry"){
             day5Layout.getLayoutParams().width = 540
-            day5Layout.setBackgroundColor(Color.GRAY)
+            day5Layout.setBackgroundColor(Color.parseColor("#FFBEBEBE"))
         }
 
         if( Days.day5[0] == "VAngry"){
             day5Layout.getLayoutParams().width = 360
-            day5Layout.setBackgroundColor(Color.RED)
+            day5Layout.setBackgroundColor(Color.parseColor("#FFCC0000"))
         }
     }
 
@@ -238,27 +236,27 @@ fun daysMover() {
         }
         if( Days.day6[0] == "Great"){
             day6Layout.getLayoutParams().width = 1080
-            day6Layout.setBackgroundColor(Color.YELLOW)
+            day6Layout.setBackgroundColor(Color.parseColor("#FFFFEB3B"))
         }
 
         if( Days.day6[0] == "Happy"){
             day6Layout.getLayoutParams().width = 900
-            day6Layout.setBackgroundColor(Color.GREEN)
+            day6Layout.setBackgroundColor(Color.parseColor("#FF99CC00"))
         }
 
         if( Days.day6[0] == "Normal"){
             day6Layout.getLayoutParams().width = 720
-            day6Layout.setBackgroundColor(Color.BLUE)
+            day6Layout.setBackgroundColor(Color.parseColor("#FF33B5E5"))
         }
 
         if( Days.day6[0] == "Angry"){
             day6Layout.getLayoutParams().width = 540
-            day6Layout.setBackgroundColor(Color.GRAY)
+            day6Layout.setBackgroundColor(Color.parseColor("#FFBEBEBE"))
         }
 
         if( Days.day6[0] == "VAngry"){
             day6Layout.getLayoutParams().width = 360
-            day6Layout.setBackgroundColor(Color.RED)
+            day6Layout.setBackgroundColor(Color.parseColor("#FFCC0000"))
         }
     }
 
@@ -270,27 +268,27 @@ fun daysMover() {
 
         if( Days.day7[0] == "Great"){
             day7Layout.getLayoutParams().width = 1080
-            day7Layout.setBackgroundColor(Color.YELLOW)
+            day7Layout.setBackgroundColor(Color.parseColor("#FFFFEB3B"))
         }
 
         if( Days.day7[0] == "Happy"){
             day7Layout.getLayoutParams().width = 900
-            day7Layout.setBackgroundColor(Color.GREEN)
+            day7Layout.setBackgroundColor(Color.parseColor("#FF99CC00"))
         }
 
         if( Days.day7[0] == "Normal"){
             day7Layout.getLayoutParams().width = 720
-            day7Layout.setBackgroundColor(Color.BLUE)
+            day7Layout.setBackgroundColor(Color.parseColor("#FF33B5E5"))
         }
 
         if( Days.day7[0] == "Angry"){
             day7Layout.getLayoutParams().width = 540
-            day7Layout.setBackgroundColor(Color.GRAY)
+            day7Layout.setBackgroundColor(Color.parseColor("#FFBEBEBE"))
         }
 
         if( Days.day7[0] == "VAngry"){
             day7Layout.getLayoutParams().width = 360
-            day7Layout.setBackgroundColor(Color.RED)
+            day7Layout.setBackgroundColor(Color.parseColor("#FFCC0000"))
         }
     }
 

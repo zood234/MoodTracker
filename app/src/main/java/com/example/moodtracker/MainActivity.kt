@@ -1,6 +1,7 @@
 package com.example.moodtracker
 
 import android.content.Intent
+import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -31,10 +32,9 @@ class MainActivity : AppCompatActivity() {
         assignCurrentDate()
         Days.currentDay[0] = "Normal"
 
-       // Toast.makeText(this, load(), Toast.LENGTH_LONG).show()
+       //Toast.makeText(this, load(), Toast.LENGTH_LONG).show()
         turnStringIntoArray()
      //   Toast.makeText(this, Days.day1[2] , Toast.LENGTH_LONG).show()
-
          write(turnAllArraysString())
 
         historyIV.setOnClickListener {

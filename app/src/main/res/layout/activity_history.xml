@@ -12,10 +12,8 @@
         android:layout_width="420dp"
         android:layout_height="match_parent"
         android:orientation="horizontal"
-        android:background="@android:color/holo_purple"
         android:gravity="center"
         android:layout_weight="1"
-
         >
 
         <TextView
@@ -38,7 +36,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="horizontal"
-        android:background="@android:color/holo_orange_dark"
         android:gravity="center"
         android:layout_weight="1">
 
@@ -64,7 +61,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="horizontal"
-        android:background="@android:color/holo_green_light"
         android:gravity="center"
         android:layout_weight="1">
 
@@ -89,7 +85,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="horizontal"
-        android:background="@android:color/darker_gray"
         android:gravity="center"
         android:layout_weight="1">
 
@@ -114,7 +109,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="horizontal"
-        android:background="@android:color/holo_red_dark"
         android:gravity="center"
         android:layout_weight="1">
 
@@ -138,7 +132,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="horizontal"
-        android:background="@android:color/black"
         android:gravity="center"
         android:layout_weight="1">
 
@@ -162,7 +155,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="horizontal"
-        android:background="@android:color/holo_orange_dark"
         android:gravity="center"
         android:layout_weight="1">
 

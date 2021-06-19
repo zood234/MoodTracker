@@ -4,7 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".veryBadMood">
+    tools:context=".veryBadMood"
+    android:background="@android:color/holo_red_dark"
+
+    >
 
     <ImageView
         android:id="@+id/normalEmotionIV"
