@@ -12,15 +12,13 @@ import java.io.*
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
 
-internal var myExternalFile: File?=null
+internal var myExternalFile: File? = null
 
 val Days = Day()
 var x1 = 1f
 var y1 = 1f
 var x2 = 1f
 var y2 = 1f
-
-
 
 
 class MainActivity : AppCompatActivity() {
@@ -36,26 +34,25 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-       // Toast.makeText(this, load(), Toast.LENGTH_LONG).show()
+        // Toast.makeText(this, load(), Toast.LENGTH_LONG).show()
 
         commentIV.setOnClickListener {
             val builder = AlertDialog.Builder(this)
             val inflater = layoutInflater
-            val dialogLayout = inflater.inflate(R.layout.comment_layout,null)
+            val dialogLayout = inflater.inflate(R.layout.comment_layout, null)
             val editText = dialogLayout.findViewById<EditText>(R.id.commentEditText)
-            with(builder){
+            with(builder) {
                 setTitle("Enter Your Comment")
-                setPositiveButton("Submit"){ _, _ ->
+                setPositiveButton("Submit") { _, _ ->
                     Days.currentDay[2] = editText.text.toString()
                 }
-                setNegativeButton("Cancel"){ _, _ ->
+                setNegativeButton("Cancel") { _, _ ->
                     Log.d("main", "Negative Button Clicked")
                 }
                 setView(dialogLayout)
                 show()
             }
         }
-
     }
 
     override fun onTouchEvent(touchevent: MotionEvent): Boolean {
@@ -75,39 +72,41 @@ class MainActivity : AppCompatActivity() {
                 if (y1 > y2) {
                     val i = Intent(this@MainActivity, BadMood::class.java)
                     startActivity(i)
-               }
+                }
             }
         }
         return false
     }
-private fun assignCurrentDate(){
-    val current = LocalDateTime.now()
-    val formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy")
-    Days.currentDay[1]  = current.format(formatter)
- //   Toast.makeText(this, Days.currentDay[1].toString(), Toast.LENGTH_LONG).show()
-}
-    private fun load() : String{
-        val filepath = "MyFileStorage"
-        val fileName ="Data"
-        val stringBuilder: StringBuilder = StringBuilder()
-        myExternalFile = File(getExternalFilesDir(filepath),fileName)
-      //  if(fileName.toString()!=null && fileName.toString().trim()!=""){
-            var fileInputStream = FileInputStream(myExternalFile)
-            var inputStreamReader: InputStreamReader = InputStreamReader(fileInputStream)
-            val bufferedReader: BufferedReader = BufferedReader(inputStreamReader)
-            var text: String? = null //change this so i pass it in
-            while ({ text = bufferedReader.readLine(); text }() != null) {
-                stringBuilder.append(text)
-            }
-            fileInputStream.close()
 
-     //   }
-       // Toast.makeText(this, stringBuilder.toString(), Toast.LENGTH_LONG).show()
+    private fun assignCurrentDate() {
+        val current = LocalDateTime.now()
+        val formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy")
+        Days.currentDay[1] = current.format(formatter)
+        //   Toast.makeText(this, Days.currentDay[1].toString(), Toast.LENGTH_LONG).show()
+    }
+
+    private fun load(): String {
+        val filepath = "MyFileStorage"
+        val fileName = "Data"
+        val stringBuilder: StringBuilder = StringBuilder()
+        myExternalFile = File(getExternalFilesDir(filepath), fileName)
+        //  if(fileName.toString()!=null && fileName.toString().trim()!=""){
+        var fileInputStream = FileInputStream(myExternalFile)
+        var inputStreamReader: InputStreamReader = InputStreamReader(fileInputStream)
+        val bufferedReader: BufferedReader = BufferedReader(inputStreamReader)
+        var text: String? = null //change this so i pass it in
+        while ({ text = bufferedReader.readLine(); text }() != null) {
+            stringBuilder.append(text)
+        }
+        fileInputStream.close()
+
+        //   }
+        // Toast.makeText(this, stringBuilder.toString(), Toast.LENGTH_LONG).show()
         return stringBuilder.toString()
     }
 
 
-    private fun turnStringIntoArray(){
+    private fun turnStringIntoArray() {
         val splitString = load().split("?").toTypedArray()
         Days.day1 = splitString[0].split("-").toTypedArray()
         Days.day2 = splitString[1].split("-").toTypedArray()
@@ -119,21 +118,21 @@ private fun assignCurrentDate(){
     }
 
 
-    private fun  turnAllArraysString() : String{
-        val fileData = Days.day1[0] + "-" + Days.day1[1] + "-" + Days.day1[2]+ "?" +
-        Days.day2[0] + "-" + Days.day2[1] + "-" + Days.day2[2]+ "?" +
-        Days.day3[0] + "-" + Days.day3[1] + "-" + Days.day3[2]+ "?" +
-        Days.day4[0] + "-" + Days.day4[1] + "-" + Days.day4[2]+ "?" +
-        Days.day5[0] + "-" + Days.day5[1] + "-" + Days.day5[2]+ "?" +
-        Days.day6[0] + "-" + Days.day6[1] + "-" + Days.day6[2]+ "?" +
-        Days.day7[0] + "-" + Days.day7[1] + "-" + Days.day7[2]+ "?"
+    private fun turnAllArraysString(): String {
+        val fileData = Days.day1[0] + "-" + Days.day1[1] + "-" + Days.day1[2] + "?" +
+                Days.day2[0] + "-" + Days.day2[1] + "-" + Days.day2[2] + "?" +
+                Days.day3[0] + "-" + Days.day3[1] + "-" + Days.day3[2] + "?" +
+                Days.day4[0] + "-" + Days.day4[1] + "-" + Days.day4[2] + "?" +
+                Days.day5[0] + "-" + Days.day5[1] + "-" + Days.day5[2] + "?" +
+                Days.day6[0] + "-" + Days.day6[1] + "-" + Days.day6[2] + "?" +
+                Days.day7[0] + "-" + Days.day7[1] + "-" + Days.day7[2] + "?"
 
         return fileData
     }
 
-    private fun write(writeToFile: String){
+    private fun write(writeToFile: String) {
         val filepath = "MyFileStorage"
-        val fileName ="Data"
+        val fileName = "Data"
         val fileData1 = writeToFile
 
         myExternalFile = File(getExternalFilesDir(filepath), fileName)

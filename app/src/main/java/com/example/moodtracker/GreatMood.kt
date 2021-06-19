@@ -23,14 +23,14 @@ class GreatMood : AppCompatActivity() {
         commentIV.setOnClickListener {
             val builder = AlertDialog.Builder(this)
             val inflater = layoutInflater
-            val dialogLayout = inflater.inflate(R.layout.comment_layout,null)
+            val dialogLayout = inflater.inflate(R.layout.comment_layout, null)
             val editText = dialogLayout.findViewById<EditText>(R.id.commentEditText)
-            with(builder){
+            with(builder) {
                 setTitle("Enter Your Comment")
-                setPositiveButton("Submit"){ dialog, which ->
+                setPositiveButton("Submit") { dialog, which ->
                     Days.currentDay[2] = editText.text.toString()
                 }
-                setNegativeButton("Cancel"){dialog, which ->
+                setNegativeButton("Cancel") { dialog, which ->
                     Log.d("main", "Negative Button Clicked")
                 }
                 setView(dialogLayout)

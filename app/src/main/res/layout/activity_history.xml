@@ -11,10 +11,9 @@
         android:id="@+id/day7Layout"
         android:layout_width="420dp"
         android:layout_height="match_parent"
-        android:orientation="horizontal"
-        android:gravity="center"
         android:layout_weight="1"
-        >
+        android:gravity="center"
+        android:orientation="horizontal">
 
         <TextView
             android:id="@+id/weekAgoTextView"
@@ -35,9 +34,9 @@
         android:id="@+id/day6Layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="horizontal"
+        android:layout_weight="1"
         android:gravity="center"
-        android:layout_weight="1">
+        android:orientation="horizontal">
 
         <TextView
             android:id="@+id/sixDaysAgoTextView"
@@ -60,9 +59,9 @@
         android:id="@+id/day5Layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="horizontal"
+        android:layout_weight="1"
         android:gravity="center"
-        android:layout_weight="1">
+        android:orientation="horizontal">
 
         <TextView
             android:id="@+id/fiveDaysAgoTextView"
@@ -84,9 +83,9 @@
         android:id="@+id/day4Layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="horizontal"
+        android:layout_weight="1"
         android:gravity="center"
-        android:layout_weight="1">
+        android:orientation="horizontal">
 
 
         <TextView
@@ -108,9 +107,9 @@
         android:id="@+id/day3Layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="horizontal"
+        android:layout_weight="1"
         android:gravity="center"
-        android:layout_weight="1">
+        android:orientation="horizontal">
 
         <TextView
             android:id="@+id/threeDaysAgoTextView"
@@ -131,9 +130,9 @@
         android:id="@+id/day2Layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="horizontal"
+        android:layout_weight="1"
         android:gravity="center"
-        android:layout_weight="1">
+        android:orientation="horizontal">
 
         <TextView
             android:id="@+id/twoDaysAgoTextView"
@@ -154,9 +153,9 @@
         android:id="@+id/day1Layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="horizontal"
+        android:layout_weight="1"
         android:gravity="center"
-        android:layout_weight="1">
+        android:orientation="horizontal">
 
         <TextView
             android:id="@+id/todayTextView"

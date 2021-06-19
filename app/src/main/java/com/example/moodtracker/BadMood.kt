@@ -28,14 +28,14 @@ class BadMood : AppCompatActivity() {
         commentIV.setOnClickListener {
             val builder = AlertDialog.Builder(this)
             val inflater = layoutInflater
-            val dialogLayout = inflater.inflate(R.layout.comment_layout,null)
+            val dialogLayout = inflater.inflate(R.layout.comment_layout, null)
             val editText = dialogLayout.findViewById<EditText>(R.id.commentEditText)
-            with(builder){
+            with(builder) {
                 setTitle("Enter Your Comment")
-                setPositiveButton("Submit"){ _, _ ->
+                setPositiveButton("Submit") { _, _ ->
                     Days.currentDay[2] = editText.text.toString()
                 }
-                setNegativeButton("Cancel"){ _, _ ->
+                setNegativeButton("Cancel") { _, _ ->
                     Log.d("main", "Negative Button Clicked")
                 }
                 setView(dialogLayout)
@@ -65,7 +65,7 @@ class BadMood : AppCompatActivity() {
                 }
             }
         }
-      //  Toast.makeText(this, Days.day1[1], Toast.LENGTH_LONG).show()
+        //  Toast.makeText(this, Days.day1[1], Toast.LENGTH_LONG).show()
 
         return false
 
