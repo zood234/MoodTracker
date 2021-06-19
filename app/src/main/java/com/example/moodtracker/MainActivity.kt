@@ -13,6 +13,9 @@ import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.activity_main.commentIV
 import kotlinx.android.synthetic.main.activity_main.historyIV
 import java.io.*
+import java.time.LocalDateTime
+import java.time.format.DateTimeFormatter
+
 internal var myExternalFile: File?=null
 
 val Days = days()
@@ -28,6 +31,8 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        assignCurrentDate()
+
         historyIV.setOnClickListener {
             val intent = Intent(this, history::class.java)
             startActivity(intent)
@@ -83,7 +88,14 @@ class MainActivity : AppCompatActivity() {
         }
         return false
     }
+fun assignCurrentDate(){
+    val current = LocalDateTime.now()
 
+    val formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy")
+    Days.currentDay[1]  = current.format(formatter)
+    Toast.makeText(this, Days.currentDay[1].toString(), Toast.LENGTH_LONG).show()
+
+}
     fun load() : String{
         val filepath = "MyFileStorage"
         val fileName ="Data"

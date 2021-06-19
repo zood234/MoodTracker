@@ -18,6 +18,7 @@ class history : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_history)
+        daysMover()
         assignToday()
         assignDay2()
         assignDay3()
@@ -50,8 +51,31 @@ class history : AppCompatActivity() {
 
     }
 
+fun daysMover() {
 
+    //checks to see if you have used the app today or not
+    if (Days.currentDay[1] == Days.day1[1]) {
+        Days.day1[0] = Days.currentDay[0]
+        Days.day1[1] = Days.currentDay[1]
+        Days.day1[2] = Days.currentDay[2]
 
+    }
+    //moves everything up the array and deletes day 7
+    //create a for loop that iterates through them all
+
+    else {
+       var i =0
+        for (i in 0..2) {
+            Days.day7[i] = Days.day6[i]
+            Days.day6[i] = Days.day5[i]
+            Days.day5[i] = Days.day4[i]
+            Days.day4[i] = Days.day3[i]
+            Days.day3[i] = Days.day2[i]
+            Days.day2[i] = Days.day1[i]
+            Days.day1[i] = Days.currentDay[i]
+        }
+    }
+}
     fun assignToday(){
         if(Days.day1[2] == "") {
             commentToday.visibility = View.INVISIBLE

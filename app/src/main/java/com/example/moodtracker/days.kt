@@ -10,7 +10,7 @@ class days {
     var day5 = arrayOf("Normal", "03/06/21", "")
     var day6 = arrayOf("Happy", "03/06/21", "Really  Happy today")
     var day7 = arrayOf("VAngry", "03/06/21", "Really  Very Angry today")
-    var currentDay = arrayOf("Great", "03/06/21", "Really Great today")
+    var currentDay = arrayOf("Great", "Never Worked", "I forgot to change it make this empty before i finish")
 
 
     var emotion = arrayOf("Happy", "Sad", "Angry", "VAngry", "Normal", "Happy", "Great")
