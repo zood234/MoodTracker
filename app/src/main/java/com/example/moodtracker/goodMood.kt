@@ -11,12 +11,19 @@ import androidx.appcompat.app.AlertDialog
 import kotlinx.android.synthetic.main.activity_bad_mood.*
 import kotlinx.android.synthetic.main.activity_bad_mood.commentIV
 import kotlinx.android.synthetic.main.activity_good_mood.*
+import kotlinx.android.synthetic.main.activity_main.*
 
 
 class goodMood : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_good_mood)
+
+        Days.currentDay[0] = "Happy"
+        historyGoodIV.setOnClickListener {
+            val intent = Intent(this, history::class.java)
+            startActivity(intent)
+        }
 
         commentIV.setOnClickListener {
             val builder = AlertDialog.Builder(this)

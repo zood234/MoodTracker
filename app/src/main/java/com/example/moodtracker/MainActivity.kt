@@ -8,10 +8,7 @@ import android.view.MotionEvent
 import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
-import kotlinx.android.synthetic.main.activity_bad_mood.*
 import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.activity_main.commentIV
-import kotlinx.android.synthetic.main.activity_main.historyIV
 import java.io.*
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
@@ -33,10 +30,10 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         assignCurrentDate()
 
+        Days.currentDay[0] = "Normal"
         historyIV.setOnClickListener {
             val intent = Intent(this, history::class.java)
             startActivity(intent)
-
         }
 
         commentIV.setOnClickListener {

@@ -9,6 +9,7 @@ import android.widget.EditText
 import androidx.appcompat.app.AlertDialog
 import kotlinx.android.synthetic.main.activity_bad_mood.*
 import kotlinx.android.synthetic.main.activity_bad_mood.commentIV
+import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.activity_very_bad_mood.*
 import java.time.LocalDateTime
 
@@ -17,6 +18,13 @@ class veryBadMood : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_very_bad_mood)
 
+        Days.currentDay[0] = "VAngry"
+
+        historyVBadIV.setOnClickListener {
+            val intent = Intent(this, history::class.java)
+            startActivity(intent)
+
+        }
         commentIV.setOnClickListener {
             val builder = AlertDialog.Builder(this)
             val inflater = layoutInflater
@@ -34,6 +42,8 @@ class veryBadMood : AppCompatActivity() {
                 show()
             }
         }
+
+
     }
 
     override fun onTouchEvent(touchevent: MotionEvent): Boolean {

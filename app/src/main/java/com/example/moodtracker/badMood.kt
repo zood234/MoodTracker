@@ -9,11 +9,23 @@ import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import kotlinx.android.synthetic.main.activity_bad_mood.*
+import kotlinx.android.synthetic.main.activity_bad_mood.commentIV
+import kotlinx.android.synthetic.main.activity_very_bad_mood.*
 
 class badMood : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_bad_mood)
+
+        Days.currentDay[0] = "Angry"
+
+        historyBadIV.setOnClickListener {
+            val intent = Intent(this, history::class.java)
+            startActivity(intent)
+
+        }
+
+
 
         commentIV.setOnClickListener {
             val builder = AlertDialog.Builder(this)
