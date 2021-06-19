@@ -12,6 +12,8 @@ import java.io.*
 import java.lang.System.load
 import java.nio.file.Files.write
 
+//Create function that moves currentDay to day 1 and move all the days up and then delete day 7
+
 class history : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -23,6 +25,28 @@ class history : AppCompatActivity() {
         assignDay5()
         assignDay6()
         assignDay7()
+
+        commentToday.setOnClickListener {
+            Toast.makeText(this, Days.day1[2].toString(), Toast.LENGTH_LONG).show()
+        }
+        comment2DaysAgo.setOnClickListener {
+            Toast.makeText(this, Days.day2[2].toString(), Toast.LENGTH_LONG).show()
+        }
+        comment3DaysAgo.setOnClickListener {
+            Toast.makeText(this, Days.day3[2].toString(), Toast.LENGTH_LONG).show()
+        }
+        comment4DaysAgo.setOnClickListener {
+            Toast.makeText(this, Days.day4[2].toString(), Toast.LENGTH_LONG).show()
+        }
+        comment5DaysAgo.setOnClickListener {
+            Toast.makeText(this, Days.day5[2].toString(), Toast.LENGTH_LONG).show()
+        }
+        comment6DaysAgo.setOnClickListener {
+            Toast.makeText(this, Days.day6[2].toString(), Toast.LENGTH_LONG).show()
+        }
+        comment7DaysAgo.setOnClickListener {
+            Toast.makeText(this, Days.day7[2].toString(), Toast.LENGTH_LONG).show()
+        }
 
     }
 
@@ -248,63 +272,5 @@ class history : AppCompatActivity() {
 
 
 
-
-
-
-
-
-
-
-    
-    fun convertArraysToString(){
-        var day1 = arrayOf("Happy", "03/06/21", "Not Worked")
-        var day2 = arrayOf("Sad", "03/06/21", "Really  Sad today")
-        var day3 = arrayOf("Angry", "03/06/21", "Really  Angry today")
-        var day4 = arrayOf("Happy", "03/06/21", "Really  Happy today")
-        var day5 = arrayOf("Happy", "03/06/21", "Really  Happy today")
-        var day6 = arrayOf("Happy", "03/06/21", "Really  Happy today")
-        var day7 = arrayOf("Happy", "03/06/21", "Really  Happy today")
-
-        //write("dsa")
-
-
-    }
-    fun load() : String{
-         val filepath = "MyFileStorage"
-        val fileName ="Data"
-        val stringBuilder: StringBuilder = StringBuilder()
-        myExternalFile = File(getExternalFilesDir(filepath),fileName)
-        if(fileName.toString()!=null && fileName.toString().trim()!=""){
-            var fileInputStream = FileInputStream(myExternalFile)
-            var inputStreamReader: InputStreamReader = InputStreamReader(fileInputStream)
-            val bufferedReader: BufferedReader = BufferedReader(inputStreamReader)
-            var text: String? = null //change this so i pass it in
-            while ({ text = bufferedReader.readLine(); text }() != null) {
-                stringBuilder.append(text)
-            }
-            fileInputStream.close()
-
-        }
-        Toast.makeText(this, stringBuilder.toString(), Toast.LENGTH_LONG).show()
-        return stringBuilder.toString()
-    }
-
-    fun write(writeToFile: String){
-        val filepath = "MyFileStorage"
-        val fileName ="Data"
-        val stringBuilder: StringBuilder = StringBuilder()
-        val fileData1 = writeToFile
-
-        myExternalFile = File(getExternalFilesDir(filepath), fileName)
-        try {
-            val fileOutPutStream = FileOutputStream(myExternalFile)
-            fileOutPutStream.write(fileData1.toString().toByteArray())
-            fileOutPutStream.close()
-        } catch (e: IOException) {
-            e.printStackTrace()
-        }
-        //    Toast.makeText(applicationContext,"data save", Toast.LENGTH_SHORT).show()
-        Toast.makeText(this, stringBuilder.toString(), Toast.LENGTH_LONG).show()
-    }
 
 }
