@@ -26,25 +26,25 @@ class History : AppCompatActivity() {
         assignDay7()
 
         commentToday.setOnClickListener {
-            Toast.makeText(this, Days.day1[2].toString(), Toast.LENGTH_LONG).show()
+            Toast.makeText(this, Days.day1[2], Toast.LENGTH_LONG).show()
         }
         comment2DaysAgo.setOnClickListener {
-            Toast.makeText(this, Days.day2[2].toString(), Toast.LENGTH_LONG).show()
+            Toast.makeText(this, Days.day2[2], Toast.LENGTH_LONG).show()
         }
         comment3DaysAgo.setOnClickListener {
-            Toast.makeText(this, Days.day3[2].toString(), Toast.LENGTH_LONG).show()
+            Toast.makeText(this, Days.day3[2], Toast.LENGTH_LONG).show()
         }
         comment4DaysAgo.setOnClickListener {
-            Toast.makeText(this, Days.day4[2].toString(), Toast.LENGTH_LONG).show()
+            Toast.makeText(this, Days.day4[2], Toast.LENGTH_LONG).show()
         }
         comment5DaysAgo.setOnClickListener {
-            Toast.makeText(this, Days.day5[2].toString(), Toast.LENGTH_LONG).show()
+            Toast.makeText(this, Days.day5[2], Toast.LENGTH_LONG).show()
         }
         comment6DaysAgo.setOnClickListener {
-            Toast.makeText(this, Days.day6[2].toString(), Toast.LENGTH_LONG).show()
+            Toast.makeText(this, Days.day6[2], Toast.LENGTH_LONG).show()
         }
         comment7DaysAgo.setOnClickListener {
-            Toast.makeText(this, Days.day7[2].toString(), Toast.LENGTH_LONG).show()
+            Toast.makeText(this, Days.day7[2], Toast.LENGTH_LONG).show()
         }
 
     }

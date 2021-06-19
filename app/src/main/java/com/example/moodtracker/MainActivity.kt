@@ -92,7 +92,7 @@ class MainActivity : AppCompatActivity() {
         myExternalFile = File(getExternalFilesDir(filepath), fileName)
         //  if(fileName.toString()!=null && fileName.toString().trim()!=""){
         var fileInputStream = FileInputStream(myExternalFile)
-        var inputStreamReader: InputStreamReader = InputStreamReader(fileInputStream)
+        var inputStreamReader = InputStreamReader(fileInputStream)
         val bufferedReader: BufferedReader = BufferedReader(inputStreamReader)
         var text: String? = null //change this so i pass it in
         while ({ text = bufferedReader.readLine(); text }() != null) {
@@ -138,7 +138,7 @@ class MainActivity : AppCompatActivity() {
         myExternalFile = File(getExternalFilesDir(filepath), fileName)
         try {
             val fileOutPutStream = FileOutputStream(myExternalFile)
-            fileOutPutStream.write(fileData1.toString().toByteArray())
+            fileOutPutStream.write(fileData1.toByteArray())
             fileOutPutStream.close()
         } catch (e: IOException) {
             e.printStackTrace()
