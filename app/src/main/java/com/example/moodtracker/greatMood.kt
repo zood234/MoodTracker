@@ -16,7 +16,6 @@ class greatMood : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_great_mood)
-
         Days.currentDay[0] = "Great"
         historyGreatIV.setOnClickListener {
             val intent = Intent(this, history::class.java)

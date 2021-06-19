@@ -29,12 +29,20 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         assignCurrentDate()
-
         Days.currentDay[0] = "Normal"
+
+       // Toast.makeText(this, load(), Toast.LENGTH_LONG).show()
+        turnStringIntoArray()
+     //   Toast.makeText(this, Days.day1[2] , Toast.LENGTH_LONG).show()
+
+         write(turnAllArraysString())
+
         historyIV.setOnClickListener {
             val intent = Intent(this, history::class.java)
             startActivity(intent)
         }
+
+       // Toast.makeText(this, load(), Toast.LENGTH_LONG).show()
 
         commentIV.setOnClickListener {
             val builder = AlertDialog.Builder(this)
@@ -57,13 +65,6 @@ class MainActivity : AppCompatActivity() {
     }
 
     override fun onTouchEvent(touchevent: MotionEvent): Boolean {
-//        val History = history()
-//        History.write("Holy Crap This worked what now")
-//     History.load()
-
-//        val GoodMood = goodMood()
-//        GoodMood.test()
-
         when (touchevent.action) {
             MotionEvent.ACTION_DOWN -> {
                 x1 = touchevent.x
@@ -87,11 +88,9 @@ class MainActivity : AppCompatActivity() {
     }
 fun assignCurrentDate(){
     val current = LocalDateTime.now()
-
     val formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy")
     Days.currentDay[1]  = current.format(formatter)
-    Toast.makeText(this, Days.currentDay[1].toString(), Toast.LENGTH_LONG).show()
-
+ //   Toast.makeText(this, Days.currentDay[1].toString(), Toast.LENGTH_LONG).show()
 }
     fun load() : String{
         val filepath = "MyFileStorage"
@@ -109,8 +108,33 @@ fun assignCurrentDate(){
             fileInputStream.close()
 
         }
-        Toast.makeText(this, stringBuilder.toString(), Toast.LENGTH_LONG).show()
+       // Toast.makeText(this, stringBuilder.toString(), Toast.LENGTH_LONG).show()
         return stringBuilder.toString()
+    }
+
+
+    fun turnStringIntoArray(){
+        val splitString = load().split("?").toTypedArray()
+        Days.day1 = splitString[0].split("-").toTypedArray()
+        Days.day2 = splitString[1].split("-").toTypedArray()
+        Days.day3 = splitString[2].split("-").toTypedArray()
+        Days.day4 = splitString[3].split("-").toTypedArray()
+        Days.day5 = splitString[4].split("-").toTypedArray()
+        Days.day6 = splitString[5].split("-").toTypedArray()
+        Days.day6 = splitString[6].split("-").toTypedArray()
+    }
+
+
+    fun  turnAllArraysString() : String{
+        val fileData = Days.day1[0] + "-" + Days.day1[1] + "-" + Days.day1[2]+ "?" +
+        Days.day2[0] + "-" + Days.day2[1] + "-" + Days.day2[2]+ "?" +
+        Days.day3[0] + "-" + Days.day3[1] + "-" + Days.day3[2]+ "?" +
+        Days.day4[0] + "-" + Days.day4[1] + "-" + Days.day4[2]+ "?" +
+        Days.day5[0] + "-" + Days.day5[1] + "-" + Days.day5[2]+ "?" +
+        Days.day6[0] + "-" + Days.day6[1] + "-" + Days.day6[2]+ "?" +
+        Days.day7[0] + "-" + Days.day7[1] + "-" + Days.day7[2]+ "?"
+
+        return fileData
     }
 
     fun write(writeToFile: String){
@@ -128,7 +152,7 @@ fun assignCurrentDate(){
             e.printStackTrace()
         }
         //    Toast.makeText(applicationContext,"data save", Toast.LENGTH_SHORT).show()
-        Toast.makeText(this, stringBuilder.toString(), Toast.LENGTH_LONG).show()
+        //Toast.makeText(this, fileData1, Toast.LENGTH_LONG).show()
     }
 
 }
