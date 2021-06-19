@@ -114,7 +114,7 @@ class MainActivity : AppCompatActivity() {
         Days.day4 = splitString[3].split("-").toTypedArray()
         Days.day5 = splitString[4].split("-").toTypedArray()
         Days.day6 = splitString[5].split("-").toTypedArray()
-        Days.day6 = splitString[6].split("-").toTypedArray()
+        Days.day7 = splitString[6].split("-").toTypedArray()
     }
 
 
