@@ -22,7 +22,6 @@ class History : AppCompatActivity() {
         assignDay6()
         assignDay7()
       write(turnAllArraysString()) //write
-
         commentToday.setOnClickListener {
             Toast.makeText(this, Days.day1[2], Toast.LENGTH_LONG).show()
         }
@@ -44,12 +43,10 @@ class History : AppCompatActivity() {
         comment7DaysAgo.setOnClickListener {
             Toast.makeText(this, Days.day7[2], Toast.LENGTH_LONG).show()
         }
-
     }
 
+    //Checks to see if you have used the app today or not and then moves the arrays up one
     private fun daysMover() {
-
-        //checks to see if you have used the app today or not
         if (Days.currentDay[1] == Days.day1[1]) {
             Days.day1[0] = Days.currentDay[0]
             Days.day1[1] = Days.currentDay[1]
@@ -67,9 +64,9 @@ class History : AppCompatActivity() {
                 Days.day1[i] = Days.currentDay[i]
             }
         }
-
     }
 
+    //Gets the data for the days and then changes the views
     private fun assignToday() {
         if (Days.day1[2] == "") {
             commentToday.visibility = View.INVISIBLE
@@ -101,6 +98,7 @@ class History : AppCompatActivity() {
         }
     }
 
+    //Gets the data for the days and then changes the views
     private fun assignDay2() {
         if (Days.day2[2] == "") {
             comment2DaysAgo.visibility = View.INVISIBLE
@@ -132,6 +130,7 @@ class History : AppCompatActivity() {
         }
     }
 
+    //Gets the data for the days and then changes the views
     private fun assignDay3() {
         if (Days.day3[2] == "") {
             comment3DaysAgo.visibility = View.INVISIBLE
@@ -162,6 +161,7 @@ class History : AppCompatActivity() {
         }
     }
 
+    //Gets the data for the days and then changes the views
     private fun assignDay4() {
 
         if (Days.day4[2] == "") {
@@ -193,9 +193,8 @@ class History : AppCompatActivity() {
         }
     }
 
-
+    //Gets the data for the days and then changes the views
     private fun assignDay5() {
-
         if (Days.day5[2] == "") {
             comment5DaysAgo.visibility = View.INVISIBLE
         }
@@ -225,8 +224,8 @@ class History : AppCompatActivity() {
         }
     }
 
+    //Gets the data for the days and then changes the views
     private fun assignDay6() {
-
         if (Days.day6[2] == "") {
             comment6DaysAgo.visibility = View.INVISIBLE
         }
@@ -256,6 +255,7 @@ class History : AppCompatActivity() {
         }
     }
 
+    //Gets the data for the days and then changes the views
     private fun assignDay7() {
         if (Days.day7[2] == "") {
             comment7DaysAgo.visibility = View.INVISIBLE
@@ -282,6 +282,7 @@ class History : AppCompatActivity() {
         }
     }
 
+    //Writes a string to file
     private fun write(writeToFile: String) {
         val filepath = "MyFileStorage"
         val fileName = "Data"
@@ -296,6 +297,7 @@ class History : AppCompatActivity() {
         }
     }
 
+    //Turns all the arrays into a string
     private fun turnAllArraysString(): String {
         val fileData = Days.day1[0] + "-" + Days.day1[1] + "-" + Days.day1[2] + "?" +
                 Days.day2[0] + "-" + Days.day2[1] + "-" + Days.day2[2] + "?" +
@@ -304,11 +306,10 @@ class History : AppCompatActivity() {
                 Days.day5[0] + "-" + Days.day5[1] + "-" + Days.day5[2] + "?" +
                 Days.day6[0] + "-" + Days.day6[1] + "-" + Days.day6[2] + "?" +
                 Days.day7[0] + "-" + Days.day7[1] + "-" + Days.day7[2] + "?"
-        Toast.makeText(this, fileData, Toast.LENGTH_LONG).show()
-
         return fileData
     }
 
+    //Loads file and then returns it back as a string
     private fun load(): String {
         val filepath = "MyFileStorage"
         val fileName = "Data"
@@ -325,7 +326,7 @@ class History : AppCompatActivity() {
         return stringBuilder.toString()
     }
 
-
+    //Puts the long string into the relevant arrays
     private fun turnStringIntoArray() {
         val splitString = load().split("?").toTypedArray()
         Days.day1 = splitString[0].split("-").toTypedArray()

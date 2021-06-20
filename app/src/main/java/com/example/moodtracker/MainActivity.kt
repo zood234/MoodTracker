@@ -13,15 +13,12 @@ import kotlinx.android.synthetic.main.activity_main.*
 import java.io.*
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
-
 internal var myExternalFile: File? = null
-
 var Days = Day()
 var x1 = 1f
 var y1 = 1f
 var x2 = 1f
 var y2 = 1f
-
 
 class MainActivity : AppCompatActivity() {
     @SuppressLint("InflateParams")
@@ -29,13 +26,14 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         assignCurrentDate()
-        Days.currentDay[0] = "Normal"
+        Days.currentDay[0] = "Normal"  //assigns the the day to normal as default
         turnStringIntoArray()
         write(turnAllArraysString())
         historyIV.setOnClickListener {
             val intent = Intent(this, History::class.java)
             startActivity(intent)
         }
+        //launches comment button
         commentIV.setOnClickListener {
             val builder = AlertDialog.Builder(this)
             val inflater = layoutInflater
@@ -55,6 +53,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    //Lets the user move to diffrent activitys
     override fun onTouchEvent(touchevent: MotionEvent): Boolean {
         when (touchevent.action) {
             MotionEvent.ACTION_DOWN -> {
@@ -78,6 +77,7 @@ class MainActivity : AppCompatActivity() {
         return false
     }
 
+    //gets current date and formats it to British date standards
     private fun assignCurrentDate() {
         val current = LocalDateTime.now()
         val formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy")
@@ -85,6 +85,7 @@ class MainActivity : AppCompatActivity() {
          Toast.makeText(this, Days.currentDay[1], Toast.LENGTH_LONG).show()
     }
 
+    //Loads file and then returns it back as a string
     private fun load(): String {
         val filepath = "MyFileStorage"
         val fileName = "Data"
@@ -93,7 +94,7 @@ class MainActivity : AppCompatActivity() {
         val fileInputStream = FileInputStream(myExternalFile)
         val inputStreamReader = InputStreamReader(fileInputStream)
         val bufferedReader = BufferedReader(inputStreamReader)
-        var text: String? = null //change this so i pass it in
+        var text: String? = null
         while ({ text = bufferedReader.readLine(); text }() != null) {
             stringBuilder.append(text)
         }
@@ -101,7 +102,7 @@ class MainActivity : AppCompatActivity() {
         return stringBuilder.toString()
     }
 
-
+    //Puts the long string into the relevant arrays
     private fun turnStringIntoArray() {
         val splitString = load().split("?").toTypedArray()
         Days.day1 = splitString[0].split("-").toTypedArray()
@@ -113,7 +114,7 @@ class MainActivity : AppCompatActivity() {
         Days.day7 = splitString[6].split("-").toTypedArray()
     }
 
-
+    //Turns all the arrays into a string
     private fun turnAllArraysString(): String {
 
         return Days.day1[0] + "-" + Days.day1[1] + "-" + Days.day1[2] + "?" +
@@ -125,6 +126,7 @@ class MainActivity : AppCompatActivity() {
                 Days.day7[0] + "-" + Days.day7[1] + "-" + Days.day7[2] + "?"
     }
 
+    //Writes a string into file
     private fun write(writeToFile: String) {
         val filepath = "MyFileStorage"
         val fileName = "Data"
