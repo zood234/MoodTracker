@@ -1,22 +1,19 @@
 package com.example.moodtracker
 
-import android.content.Intent
 import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.MotionEvent
 import android.view.View
 import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_history.*
 import java.io.*
-import java.lang.System.load
 import java.nio.file.Files.write
 
 class History : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_history)
-  //     turnStringIntoArray() //load
+      turnStringIntoArray() //load
         daysMover()
         assignToday()
         assignDay2()
@@ -25,7 +22,7 @@ class History : AppCompatActivity() {
         assignDay5()
         assignDay6()
         assignDay7()
-   //    write(turnAllArraysString()) //write
+      write(turnAllArraysString()) //write
 
         commentToday.setOnClickListener {
             Toast.makeText(this, Days.day1[2], Toast.LENGTH_LONG).show()
@@ -60,12 +57,6 @@ class History : AppCompatActivity() {
             Days.day1[2] = Days.currentDay[2]
         }
 
-        else if (Days.currentDay[1] == "") {
-
-        }
-        //moves everything up the array and deletes day 7
-        //create a for loop that iterates through them all
-
         else {
             var i = 0
             for (i in 0..2) {
@@ -79,16 +70,6 @@ class History : AppCompatActivity() {
             }
         }
 
-
-//        for (i in 0..2) {
-//            Days.day7[i] = Days.day6[i]
-//            Days.day6[i] = Days.day5[i]
-//            Days.day5[i] = Days.day4[i]
-//            Days.day4[i] = Days.day3[i]
-//            Days.day3[i] = Days.day2[i]
-//            Days.day2[i] = Days.day1[i]
-//            Days.day1[i] = Days.currentDay[i]
-//        }
     }
 
     private fun assignToday() {
@@ -153,7 +134,7 @@ class History : AppCompatActivity() {
         }
     }
 
-    fun assignDay3() {
+    private fun assignDay3() {
         if (Days.day3[2] == "") {
             comment3DaysAgo.visibility = View.INVISIBLE
         }
@@ -306,12 +287,11 @@ class History : AppCompatActivity() {
     private fun write(writeToFile: String) {
         val filepath = "MyFileStorage"
         val fileName = "Data"
-        val fileData1 = writeToFile
 
         myExternalFile = File(getExternalFilesDir(filepath), fileName)
         try {
             val fileOutPutStream = FileOutputStream(myExternalFile)
-            fileOutPutStream.write(fileData1.toByteArray())
+            fileOutPutStream.write(writeToFile.toByteArray())
             fileOutPutStream.close()
         } catch (e: IOException) {
             e.printStackTrace()
@@ -336,8 +316,8 @@ class History : AppCompatActivity() {
         val fileName = "Data"
         val stringBuilder: StringBuilder = StringBuilder()
         myExternalFile = File(getExternalFilesDir(filepath), fileName)
-        var fileInputStream = FileInputStream(myExternalFile)
-        var inputStreamReader = InputStreamReader(fileInputStream)
+        val fileInputStream = FileInputStream(myExternalFile)
+        val inputStreamReader = InputStreamReader(fileInputStream)
         val bufferedReader: BufferedReader = BufferedReader(inputStreamReader)
         var text: String? = null //change this so i pass it in
         while ({ text = bufferedReader.readLine(); text }() != null) {

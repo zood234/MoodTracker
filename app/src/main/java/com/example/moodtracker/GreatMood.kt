@@ -1,5 +1,6 @@
 package com.example.moodtracker
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -14,6 +15,7 @@ import java.io.FileOutputStream
 import java.io.IOException
 
 class GreatMood : AppCompatActivity() {
+    @SuppressLint("InflateParams")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_great_mood)

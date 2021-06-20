@@ -15,7 +15,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/smiley_happy" />
+        app:srcCompat="@drawable/smiley_happy"
+        android:contentDescription="Normal Emotion" />
 
     <ImageView
         android:id="@+id/commentIV"
@@ -25,7 +26,8 @@
         android:layout_marginBottom="64dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/ic_note_add_black" />
+        app:srcCompat="@drawable/ic_note_add_black"
+        android:contentDescription="Comment Button" />
 
     <ImageView
         android:id="@+id/historyGoodIV"
@@ -35,6 +37,7 @@
         android:layout_marginBottom="64dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@drawable/ic_history_black" />
+        app:srcCompat="@drawable/ic_history_black"
+        android:contentDescription="History Button" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

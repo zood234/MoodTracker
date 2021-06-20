@@ -27,7 +27,8 @@
             android:layout_width="93dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            app:srcCompat="@drawable/ic_comment_black_48px" />
+            app:srcCompat="@drawable/ic_comment_black_48px"
+            android:contentDescription="How many day ago" />
     </LinearLayout>
 
     <LinearLayout
@@ -50,7 +51,8 @@
             android:layout_width="93dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            app:srcCompat="@drawable/ic_comment_black_48px" />
+            app:srcCompat="@drawable/ic_comment_black_48px"
+            android:contentDescription="How many days ago" />
 
 
     </LinearLayout>
@@ -75,7 +77,8 @@
             android:layout_width="93dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            app:srcCompat="@drawable/ic_comment_black_48px" />
+            app:srcCompat="@drawable/ic_comment_black_48px"
+            android:contentDescription="How many days ago" />
 
     </LinearLayout>
 
@@ -100,7 +103,8 @@
             android:layout_width="93dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            app:srcCompat="@drawable/ic_comment_black_48px" />
+            app:srcCompat="@drawable/ic_comment_black_48px"
+            android:contentDescription="How many days ago" />
     </LinearLayout>
 
     <LinearLayout
@@ -123,7 +127,8 @@
             android:layout_width="93dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            app:srcCompat="@drawable/ic_comment_black_48px" />
+            app:srcCompat="@drawable/ic_comment_black_48px"
+            android:contentDescription="How many days ago" />
     </LinearLayout>
 
     <LinearLayout
@@ -146,7 +151,8 @@
             android:layout_width="93dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            app:srcCompat="@drawable/ic_comment_black_48px" />
+            app:srcCompat="@drawable/ic_comment_black_48px"
+            android:contentDescription="How many days ago" />
     </LinearLayout>
 
     <LinearLayout
@@ -169,7 +175,8 @@
             android:layout_width="93dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            app:srcCompat="@drawable/ic_comment_black_48px" />
+            app:srcCompat="@drawable/ic_comment_black_48px"
+            android:contentDescription="How many days ago" />
     </LinearLayout>
 
 

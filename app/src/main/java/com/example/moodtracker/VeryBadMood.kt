@@ -1,5 +1,6 @@
 package com.example.moodtracker
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -11,6 +12,7 @@ import kotlinx.android.synthetic.main.activity_bad_mood.commentIV
 import kotlinx.android.synthetic.main.activity_very_bad_mood.*
 
 class VeryBadMood : AppCompatActivity() {
+    @SuppressLint("InflateParams")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_very_bad_mood)

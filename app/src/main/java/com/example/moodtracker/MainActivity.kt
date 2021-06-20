@@ -1,5 +1,6 @@
 package com.example.moodtracker
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -23,20 +24,18 @@ var y2 = 1f
 
 
 class MainActivity : AppCompatActivity() {
+    @SuppressLint("InflateParams")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         assignCurrentDate()
-  //      Days.currentDay[0] = "Normal"
+        Days.currentDay[0] = "Normal"
         turnStringIntoArray()
         write(turnAllArraysString())
         historyIV.setOnClickListener {
             val intent = Intent(this, History::class.java)
             startActivity(intent)
         }
-
-        // Toast.makeText(this, load(), Toast.LENGTH_LONG).show()
-
         commentIV.setOnClickListener {
             val builder = AlertDialog.Builder(this)
             val inflater = layoutInflater
@@ -91,8 +90,8 @@ class MainActivity : AppCompatActivity() {
         val fileName = "Data"
         val stringBuilder: StringBuilder = StringBuilder()
         myExternalFile = File(getExternalFilesDir(filepath), fileName)
-        var fileInputStream = FileInputStream(myExternalFile)
-        var inputStreamReader = InputStreamReader(fileInputStream)
+        val fileInputStream = FileInputStream(myExternalFile)
+        val inputStreamReader = InputStreamReader(fileInputStream)
         val bufferedReader: BufferedReader = BufferedReader(inputStreamReader)
         var text: String? = null //change this so i pass it in
         while ({ text = bufferedReader.readLine(); text }() != null) {
@@ -116,26 +115,24 @@ class MainActivity : AppCompatActivity() {
 
 
     private fun turnAllArraysString(): String {
-        val fileData = Days.day1[0] + "-" + Days.day1[1] + "-" + Days.day1[2] + "?" +
+
+        return Days.day1[0] + "-" + Days.day1[1] + "-" + Days.day1[2] + "?" +
                 Days.day2[0] + "-" + Days.day2[1] + "-" + Days.day2[2] + "?" +
                 Days.day3[0] + "-" + Days.day3[1] + "-" + Days.day3[2] + "?" +
                 Days.day4[0] + "-" + Days.day4[1] + "-" + Days.day4[2] + "?" +
                 Days.day5[0] + "-" + Days.day5[1] + "-" + Days.day5[2] + "?" +
                 Days.day6[0] + "-" + Days.day6[1] + "-" + Days.day6[2] + "?" +
                 Days.day7[0] + "-" + Days.day7[1] + "-" + Days.day7[2] + "?"
-
-        return fileData
     }
 
     private fun write(writeToFile: String) {
         val filepath = "MyFileStorage"
         val fileName = "Data"
-        val fileData1 = writeToFile
 
         myExternalFile = File(getExternalFilesDir(filepath), fileName)
         try {
             val fileOutPutStream = FileOutputStream(myExternalFile)
-            fileOutPutStream.write(fileData1.toByteArray())
+            fileOutPutStream.write(writeToFile.toByteArray())
             fileOutPutStream.close()
         } catch (e: IOException) {
             e.printStackTrace()
