@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.util.Log
 import android.view.MotionEvent
 import android.widget.EditText
+import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import kotlinx.android.synthetic.main.activity_main.*
 import java.io.*
@@ -14,7 +15,7 @@ import java.time.format.DateTimeFormatter
 
 internal var myExternalFile: File? = null
 
-val Days = Day()
+var Days = Day()
 var x1 = 1f
 var y1 = 1f
 var x2 = 1f
@@ -26,7 +27,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         assignCurrentDate()
-        Days.currentDay[0] = "Normal"
+  //      Days.currentDay[0] = "Normal"
         turnStringIntoArray()
         write(turnAllArraysString())
         historyIV.setOnClickListener {
@@ -82,7 +83,7 @@ class MainActivity : AppCompatActivity() {
         val current = LocalDateTime.now()
         val formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy")
         Days.currentDay[1] = current.format(formatter)
-        //   Toast.makeText(this, Days.currentDay[1].toString(), Toast.LENGTH_LONG).show()
+         Toast.makeText(this, Days.currentDay[1].toString(), Toast.LENGTH_LONG).show()
     }
 
     private fun load(): String {
@@ -90,7 +91,6 @@ class MainActivity : AppCompatActivity() {
         val fileName = "Data"
         val stringBuilder: StringBuilder = StringBuilder()
         myExternalFile = File(getExternalFilesDir(filepath), fileName)
-        //  if(fileName.toString()!=null && fileName.toString().trim()!=""){
         var fileInputStream = FileInputStream(myExternalFile)
         var inputStreamReader = InputStreamReader(fileInputStream)
         val bufferedReader: BufferedReader = BufferedReader(inputStreamReader)
@@ -99,9 +99,6 @@ class MainActivity : AppCompatActivity() {
             stringBuilder.append(text)
         }
         fileInputStream.close()
-
-        //   }
-        // Toast.makeText(this, stringBuilder.toString(), Toast.LENGTH_LONG).show()
         return stringBuilder.toString()
     }
 
@@ -143,8 +140,10 @@ class MainActivity : AppCompatActivity() {
         } catch (e: IOException) {
             e.printStackTrace()
         }
-        //    Toast.makeText(applicationContext,"data save", Toast.LENGTH_SHORT).show()
-        //Toast.makeText(this, fileData1, Toast.LENGTH_LONG).show()
+    }
+
+    fun test() {
+        Toast.makeText(this, "stringBuilder".toString(), Toast.LENGTH_LONG).show()
     }
 
 }

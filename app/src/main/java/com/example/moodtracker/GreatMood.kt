@@ -9,6 +9,9 @@ import android.widget.EditText
 import androidx.appcompat.app.AlertDialog
 import kotlinx.android.synthetic.main.activity_bad_mood.commentIV
 import kotlinx.android.synthetic.main.activity_great_mood.*
+import java.io.File
+import java.io.FileOutputStream
+import java.io.IOException
 
 class GreatMood : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -59,5 +62,7 @@ class GreatMood : AppCompatActivity() {
         }
         return false
     }
+
+
 
 }

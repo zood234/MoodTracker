@@ -16,6 +16,7 @@ class History : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_history)
+  //     turnStringIntoArray() //load
         daysMover()
         assignToday()
         assignDay2()
@@ -24,6 +25,7 @@ class History : AppCompatActivity() {
         assignDay5()
         assignDay6()
         assignDay7()
+   //    write(turnAllArraysString()) //write
 
         commentToday.setOnClickListener {
             Toast.makeText(this, Days.day1[2], Toast.LENGTH_LONG).show()
@@ -56,6 +58,9 @@ class History : AppCompatActivity() {
             Days.day1[0] = Days.currentDay[0]
             Days.day1[1] = Days.currentDay[1]
             Days.day1[2] = Days.currentDay[2]
+        }
+
+        else if (Days.currentDay[1] == "") {
 
         }
         //moves everything up the array and deletes day 7
@@ -73,6 +78,17 @@ class History : AppCompatActivity() {
                 Days.day1[i] = Days.currentDay[i]
             }
         }
+
+
+//        for (i in 0..2) {
+//            Days.day7[i] = Days.day6[i]
+//            Days.day6[i] = Days.day5[i]
+//            Days.day5[i] = Days.day4[i]
+//            Days.day4[i] = Days.day3[i]
+//            Days.day3[i] = Days.day2[i]
+//            Days.day2[i] = Days.day1[i]
+//            Days.day1[i] = Days.currentDay[i]
+//        }
     }
 
     private fun assignToday() {
@@ -285,5 +301,61 @@ class History : AppCompatActivity() {
             day7Layout.layoutParams.width = 360
             day7Layout.setBackgroundColor(Color.parseColor("#FFCC0000"))
         }
+    }
+
+    private fun write(writeToFile: String) {
+        val filepath = "MyFileStorage"
+        val fileName = "Data"
+        val fileData1 = writeToFile
+
+        myExternalFile = File(getExternalFilesDir(filepath), fileName)
+        try {
+            val fileOutPutStream = FileOutputStream(myExternalFile)
+            fileOutPutStream.write(fileData1.toByteArray())
+            fileOutPutStream.close()
+        } catch (e: IOException) {
+            e.printStackTrace()
+        }
+    }
+
+    private fun turnAllArraysString(): String {
+        val fileData = Days.day1[0] + "-" + Days.day1[1] + "-" + Days.day1[2] + "?" +
+                Days.day2[0] + "-" + Days.day2[1] + "-" + Days.day2[2] + "?" +
+                Days.day3[0] + "-" + Days.day3[1] + "-" + Days.day3[2] + "?" +
+                Days.day4[0] + "-" + Days.day4[1] + "-" + Days.day4[2] + "?" +
+                Days.day5[0] + "-" + Days.day5[1] + "-" + Days.day5[2] + "?" +
+                Days.day6[0] + "-" + Days.day6[1] + "-" + Days.day6[2] + "?" +
+                Days.day7[0] + "-" + Days.day7[1] + "-" + Days.day7[2] + "?"
+        Toast.makeText(this, fileData, Toast.LENGTH_LONG).show()
+
+        return fileData
+    }
+
+    private fun load(): String {
+        val filepath = "MyFileStorage"
+        val fileName = "Data"
+        val stringBuilder: StringBuilder = StringBuilder()
+        myExternalFile = File(getExternalFilesDir(filepath), fileName)
+        var fileInputStream = FileInputStream(myExternalFile)
+        var inputStreamReader = InputStreamReader(fileInputStream)
+        val bufferedReader: BufferedReader = BufferedReader(inputStreamReader)
+        var text: String? = null //change this so i pass it in
+        while ({ text = bufferedReader.readLine(); text }() != null) {
+            stringBuilder.append(text)
+        }
+        fileInputStream.close()
+        return stringBuilder.toString()
+    }
+
+
+    private fun turnStringIntoArray() {
+        val splitString = load().split("?").toTypedArray()
+        Days.day1 = splitString[0].split("-").toTypedArray()
+        Days.day2 = splitString[1].split("-").toTypedArray()
+        Days.day3 = splitString[2].split("-").toTypedArray()
+        Days.day4 = splitString[3].split("-").toTypedArray()
+        Days.day5 = splitString[4].split("-").toTypedArray()
+        Days.day6 = splitString[5].split("-").toTypedArray()
+        Days.day7 = splitString[6].split("-").toTypedArray()
     }
 }
