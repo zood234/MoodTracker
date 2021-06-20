@@ -17,7 +17,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/smiley_normal"
-        android:contentDescription="TODO" />
+        android:contentDescription="Normal Emotion" />
 
     <ImageView
         android:id="@+id/commentIV"
@@ -28,7 +28,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/ic_note_add_black"
-        android:contentDescription="TODO" />
+        android:contentDescription="Comment Button" />
 
     <ImageView
         android:id="@+id/historyIV"
@@ -39,6 +39,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:srcCompat="@drawable/ic_history_black"
-        android:contentDescription="TODO" />
+        android:contentDescription="History Button" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

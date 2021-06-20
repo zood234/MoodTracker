@@ -1,21 +1,5 @@
 package com.example.moodtracker
 
-import android.view.View
-import java.io.File
-import java.io.FileOutputStream
-import java.io.IOException
-import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
-import android.os.Bundle
-import android.util.Log
-import android.view.MotionEvent
-import android.widget.EditText
-import androidx.appcompat.app.AlertDialog
-import kotlinx.android.synthetic.main.activity_main.*
-import java.io.*
-import java.time.LocalDateTime
-import java.time.format.DateTimeFormatter
-
 class Day {
 //    var day1 = arrayOf("Angry", "19/06/2021", "This Should be overwritten")
 //    var day2 = arrayOf("Great", "18/06/2021", "Really  Sad today")

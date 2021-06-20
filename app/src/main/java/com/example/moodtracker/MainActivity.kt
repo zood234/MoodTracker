@@ -82,7 +82,7 @@ class MainActivity : AppCompatActivity() {
         val current = LocalDateTime.now()
         val formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy")
         Days.currentDay[1] = current.format(formatter)
-         Toast.makeText(this, Days.currentDay[1].toString(), Toast.LENGTH_LONG).show()
+         Toast.makeText(this, Days.currentDay[1], Toast.LENGTH_LONG).show()
     }
 
     private fun load(): String {
@@ -92,7 +92,7 @@ class MainActivity : AppCompatActivity() {
         myExternalFile = File(getExternalFilesDir(filepath), fileName)
         val fileInputStream = FileInputStream(myExternalFile)
         val inputStreamReader = InputStreamReader(fileInputStream)
-        val bufferedReader: BufferedReader = BufferedReader(inputStreamReader)
+        val bufferedReader = BufferedReader(inputStreamReader)
         var text: String? = null //change this so i pass it in
         while ({ text = bufferedReader.readLine(); text }() != null) {
             stringBuilder.append(text)
@@ -137,10 +137,6 @@ class MainActivity : AppCompatActivity() {
         } catch (e: IOException) {
             e.printStackTrace()
         }
-    }
-
-    fun test() {
-        Toast.makeText(this, "stringBuilder".toString(), Toast.LENGTH_LONG).show()
     }
 
 }

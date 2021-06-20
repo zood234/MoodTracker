@@ -1,13 +1,12 @@
 package com.example.moodtracker
 
 import android.graphics.Color
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_history.*
 import java.io.*
-import java.nio.file.Files.write
 
 class History : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -58,7 +57,6 @@ class History : AppCompatActivity() {
         }
 
         else {
-            var i = 0
             for (i in 0..2) {
                 Days.day7[i] = Days.day6[i]
                 Days.day6[i] = Days.day5[i]
@@ -318,7 +316,7 @@ class History : AppCompatActivity() {
         myExternalFile = File(getExternalFilesDir(filepath), fileName)
         val fileInputStream = FileInputStream(myExternalFile)
         val inputStreamReader = InputStreamReader(fileInputStream)
-        val bufferedReader: BufferedReader = BufferedReader(inputStreamReader)
+        val bufferedReader = BufferedReader(inputStreamReader)
         var text: String? = null //change this so i pass it in
         while ({ text = bufferedReader.readLine(); text }() != null) {
             stringBuilder.append(text)
