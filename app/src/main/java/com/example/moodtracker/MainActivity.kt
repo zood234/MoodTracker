@@ -82,7 +82,7 @@ class MainActivity : AppCompatActivity() {
         val current = LocalDateTime.now()
         val formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy")
         Days.currentDay[1] = current.format(formatter)
-         Toast.makeText(this, Days.currentDay[1], Toast.LENGTH_LONG).show()
+       //  Toast.makeText(this, Days.currentDay[1], Toast.LENGTH_LONG).show()
     }
 
     //Loads file and then returns it back as a string
