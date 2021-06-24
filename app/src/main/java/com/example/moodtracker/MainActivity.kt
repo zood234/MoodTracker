@@ -13,6 +13,7 @@ import kotlinx.android.synthetic.main.activity_main.*
 import java.io.*
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
+import java.io.File
 internal var myExternalFile: File? = null
 var Days = Day()
 var x1 = 1f
@@ -95,6 +96,11 @@ class MainActivity : AppCompatActivity() {
         val inputStreamReader = InputStreamReader(fileInputStream)
         val bufferedReader = BufferedReader(inputStreamReader)
         var text: String? = null
+        var file = File(fileName)
+        var fileExists = file.exists()
+
+
+
         while ({ text = bufferedReader.readLine(); text }() != null) {
             stringBuilder.append(text)
         }
@@ -102,17 +108,31 @@ class MainActivity : AppCompatActivity() {
         return stringBuilder.toString()
     }
 
+
+
+
     //Puts the long string into the relevant arrays
     private fun turnStringIntoArray() {
-        val splitString = load().split("?").toTypedArray()
-        Days.day1 = splitString[0].split("-").toTypedArray()
-        Days.day2 = splitString[1].split("-").toTypedArray()
-        Days.day3 = splitString[2].split("-").toTypedArray()
-        Days.day4 = splitString[3].split("-").toTypedArray()
-        Days.day5 = splitString[4].split("-").toTypedArray()
-        Days.day6 = splitString[5].split("-").toTypedArray()
-        Days.day7 = splitString[6].split("-").toTypedArray()
-    }
+
+
+        try {
+            val splitString = load().split("?").toTypedArray()
+            Days.day1 = splitString[0].split("-").toTypedArray()
+            Days.day2 = splitString[1].split("-").toTypedArray()
+            Days.day3 = splitString[2].split("-").toTypedArray()
+            Days.day4 = splitString[3].split("-").toTypedArray()
+            Days.day5 = splitString[4].split("-").toTypedArray()
+            Days.day6 = splitString[5].split("-").toTypedArray()
+            Days.day7 = splitString[6].split("-").toTypedArray()
+
+        } catch (e: IOException) {
+            e.printStackTrace()
+
+    }}
+
+
+
+
 
     //Turns all the arrays into a string
     private fun turnAllArraysString(): String {
