@@ -42,8 +42,6 @@ class GreatMood : AppCompatActivity() {
     }
 
     override fun onTouchEvent(touchevent: MotionEvent): Boolean {
-
-
         when (touchevent.action) {
             MotionEvent.ACTION_DOWN -> {
                 x1 = touchevent.x
@@ -53,7 +51,7 @@ class GreatMood : AppCompatActivity() {
                 x2 = touchevent.x
                 y2 = touchevent.y
 
-                if (y1 > y2) {
+                if (y1 < y2) {
                     val i = Intent(this@GreatMood, GoodMood::class.java)
                     startActivity(i)
                 }
@@ -61,7 +59,4 @@ class GreatMood : AppCompatActivity() {
         }
         return false
     }
-
-
-
 }

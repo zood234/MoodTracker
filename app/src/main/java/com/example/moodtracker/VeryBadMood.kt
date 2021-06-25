@@ -57,7 +57,7 @@ class VeryBadMood : AppCompatActivity() {
                 x2 = touchevent.x
                 y2 = touchevent.y
 
-                if (y1 < y2) {
+                if (y1 > y2) {
                     val i = Intent(this@VeryBadMood, BadMood::class.java)
                     startActivity(i)
                 }

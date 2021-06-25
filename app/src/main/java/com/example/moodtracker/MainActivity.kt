@@ -7,13 +7,13 @@ import android.os.Bundle
 import android.util.Log
 import android.view.MotionEvent
 import android.widget.EditText
-import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import kotlinx.android.synthetic.main.activity_main.*
 import java.io.*
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
 import java.io.File
+
 internal var myExternalFile: File? = null
 var Days = Day()
 var x1 = 1f
@@ -66,11 +66,11 @@ class MainActivity : AppCompatActivity() {
                 y2 = touchevent.y
 
                 if (y1 < y2) {
-                    val i = Intent(this@MainActivity, GoodMood::class.java)
+                    val i = Intent(this@MainActivity, BadMood::class.java)
                     startActivity(i)
                 }
                 if (y1 > y2) {
-                    val i = Intent(this@MainActivity, BadMood::class.java)
+                    val i = Intent(this@MainActivity, GoodMood::class.java)
                     startActivity(i)
                 }
             }
@@ -83,7 +83,7 @@ class MainActivity : AppCompatActivity() {
         val current = LocalDateTime.now()
         val formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy")
         Days.currentDay[1] = current.format(formatter)
-       //  Toast.makeText(this, Days.currentDay[1], Toast.LENGTH_LONG).show()
+        //  Toast.makeText(this, Days.currentDay[1], Toast.LENGTH_LONG).show()
     }
 
     //Loads file and then returns it back as a string
@@ -109,8 +109,6 @@ class MainActivity : AppCompatActivity() {
     }
 
 
-
-
     //Puts the long string into the relevant arrays
     private fun turnStringIntoArray() {
 
@@ -128,10 +126,8 @@ class MainActivity : AppCompatActivity() {
         } catch (e: IOException) {
             e.printStackTrace()
 
-    }}
-
-
-
+        }
+    }
 
 
     //Turns all the arrays into a string

@@ -16,7 +16,6 @@ class BadMood : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_bad_mood)
-
         Days.currentDay[0] = "Angry"
 
         historyBadIV.setOnClickListener {
@@ -24,8 +23,6 @@ class BadMood : AppCompatActivity() {
             startActivity(intent)
 
         }
-
-
 
         commentIV.setOnClickListener {
             val builder = AlertDialog.Builder(this)
@@ -58,17 +55,15 @@ class BadMood : AppCompatActivity() {
                 x2 = touchevent.x
                 y2 = touchevent.y
                 if (y1 < y2) {
-                    val i = Intent(this@BadMood, MainActivity::class.java)
+                    val i = Intent(this@BadMood, VeryBadMood::class.java)
                     startActivity(i)
                 }
                 if (y1 > y2) {
-                    val i = Intent(this@BadMood, VeryBadMood::class.java)
+                    val i = Intent(this@BadMood, MainActivity::class.java)
                     startActivity(i)
                 }
             }
         }
-        //  Toast.makeText(this, Days.day1[1], Toast.LENGTH_LONG).show()
-
         return false
 
     }

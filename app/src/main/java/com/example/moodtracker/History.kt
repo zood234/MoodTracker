@@ -12,7 +12,7 @@ class History : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_history)
-      turnStringIntoArray() //load
+        turnStringIntoArray() //load
         daysMover()
         assignToday()
         assignDay2()
@@ -21,7 +21,7 @@ class History : AppCompatActivity() {
         assignDay5()
         assignDay6()
         assignDay7()
-      write(turnAllArraysString()) //write
+        write(turnAllArraysString()) //write
         commentToday.setOnClickListener {
             Toast.makeText(this, Days.day1[2], Toast.LENGTH_LONG).show()
         }
@@ -51,9 +51,7 @@ class History : AppCompatActivity() {
             Days.day1[0] = Days.currentDay[0]
             Days.day1[1] = Days.currentDay[1]
             Days.day1[2] = Days.currentDay[2]
-        }
-
-        else {
+        } else {
             for (i in 0..2) {
                 Days.day7[i] = Days.day6[i]
                 Days.day6[i] = Days.day5[i]

@@ -57,11 +57,11 @@ class GoodMood : AppCompatActivity() {
                 y2 = touchevent.y
 
                 if (y1 < y2) {
-                    val i = Intent(this@GoodMood, GreatMood::class.java)
+                    val i = Intent(this@GoodMood, MainActivity::class.java)
                     startActivity(i)
                 }
                 if (y1 > y2) {
-                    val i = Intent(this@GoodMood, MainActivity::class.java)
+                    val i = Intent(this@GoodMood, GreatMood::class.java)
                     startActivity(i)
                 }
             }
