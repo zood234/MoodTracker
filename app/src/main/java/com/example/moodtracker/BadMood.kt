@@ -32,7 +32,9 @@ class BadMood : AppCompatActivity() {
             with(builder) {
                 setTitle("Enter Your Comment")
                 setPositiveButton("Submit") { _, _ ->
-                    Days.currentDay[2] = editText.text.toString()
+                    if(editText.text.toString().length >3) {
+                        Days.currentDay[2] = editText.text.toString()
+                    }
                 }
                 setNegativeButton("Cancel") { _, _ ->
                     Log.d("main", "Negative Button Clicked")

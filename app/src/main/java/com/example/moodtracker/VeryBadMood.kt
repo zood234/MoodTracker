@@ -31,8 +31,10 @@ class VeryBadMood : AppCompatActivity() {
             val editText = dialogLayout.findViewById<EditText>(R.id.commentEditText)
             with(builder) {
                 setTitle("Enter Your Comment")
-                setPositiveButton("Submit") { dialog, which ->
-                    Days.currentDay[2] = editText.text.toString()
+                setPositiveButton("Submit") { _, _ ->
+                    if(editText.text.toString().length >3) {
+                        Days.currentDay[2] = editText.text.toString()
+                    }
                 }
                 setNegativeButton("Cancel") { dialog, which ->
                     Log.d("main", "Negative Button Clicked")

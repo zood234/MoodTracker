@@ -20,6 +20,8 @@ var x1 = 1f
 var y1 = 1f
 var x2 = 1f
 var y2 = 1f
+var scrollUp = false
+var scrollDown = false
 
 class MainActivity : AppCompatActivity() {
     @SuppressLint("InflateParams")
@@ -43,7 +45,9 @@ class MainActivity : AppCompatActivity() {
             with(builder) {
                 setTitle("Enter Your Comment")
                 setPositiveButton("Submit") { _, _ ->
-                    Days.currentDay[2] = editText.text.toString()
+                    if(editText.text.toString().length >3) {
+                        Days.currentDay[2] = editText.text.toString()
+                    }
                 }
                 setNegativeButton("Cancel") { _, _ ->
                     Log.d("main", "Negative Button Clicked")
@@ -58,18 +62,18 @@ class MainActivity : AppCompatActivity() {
     override fun onTouchEvent(touchevent: MotionEvent): Boolean {
         when (touchevent.action) {
             MotionEvent.ACTION_DOWN -> {
-                x1 = touchevent.x
                 y1 = touchevent.y
             }
             MotionEvent.ACTION_UP -> {
-                x2 = touchevent.x
                 y2 = touchevent.y
 
                 if (y1 < y2) {
+                    scrollUp
                     val i = Intent(this@MainActivity, BadMood::class.java)
                     startActivity(i)
                 }
                 if (y1 > y2) {
+                    !scrollDown
                     val i = Intent(this@MainActivity, GoodMood::class.java)
                     startActivity(i)
                 }

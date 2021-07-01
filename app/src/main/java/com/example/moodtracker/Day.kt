@@ -13,12 +13,7 @@ class Day {
     //Checks to see if the comment is more than 3 characters
     fun minMaxChecker(comment: String): Boolean{
     currentDay[2] = comment
-        if(comment.length < 4 && comment!= ""){
-          return false
-        }
-        else {
-            return true
-        }
+        return !(comment.length < 4 && comment!= "")
     }
 
 }
