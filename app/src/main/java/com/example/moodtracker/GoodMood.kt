@@ -36,7 +36,7 @@ class GoodMood : AppCompatActivity() {
                         Days.currentDay[2] = editText.text.toString()
                     }
                 }
-                setNegativeButton("Cancel") { dialog, which ->
+                setNegativeButton("Cancel") { _, _ ->
                     Log.d("main", "Negative Button Clicked")
                 }
                 setView(dialogLayout)
