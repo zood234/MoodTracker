@@ -2,6 +2,7 @@ package com.example.moodtracker
 
 import android.annotation.SuppressLint
 import android.content.Intent
+import android.media.MediaPlayer
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -16,9 +17,7 @@ import java.io.File
 
 internal var myExternalFile: File? = null
 var Days = Day()
-var x1 = 1f
 var y1 = 1f
-var x2 = 1f
 var y2 = 1f
 var scrollUp = false
 var scrollDown = false

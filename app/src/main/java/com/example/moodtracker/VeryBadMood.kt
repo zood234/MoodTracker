@@ -2,6 +2,7 @@ package com.example.moodtracker
 
 import android.annotation.SuppressLint
 import android.content.Intent
+import android.media.MediaPlayer
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -18,6 +19,9 @@ class VeryBadMood : AppCompatActivity() {
         setContentView(R.layout.activity_very_bad_mood)
 
         Days.currentDay[0] = "VAngry"
+
+        var mediaPlayer = MediaPlayer.create(this, R.raw.soundangry)
+        mediaPlayer.start()
 
         historyVBadIV.setOnClickListener {
             val intent = Intent(this, History::class.java)
@@ -52,11 +56,9 @@ class VeryBadMood : AppCompatActivity() {
 
         when (touchevent.action) {
             MotionEvent.ACTION_DOWN -> {
-                x1 = touchevent.x
                 y1 = touchevent.y
             }
             MotionEvent.ACTION_UP -> {
-                x2 = touchevent.x
                 y2 = touchevent.y
 
                 if (y1 > y2) {

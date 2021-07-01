@@ -50,11 +50,9 @@ class BadMood : AppCompatActivity() {
 
         when (touchevent.action) {
             MotionEvent.ACTION_DOWN -> {
-                x1 = touchevent.x
                 y1 = touchevent.y
             }
             MotionEvent.ACTION_UP -> {
-                x2 = touchevent.x
                 y2 = touchevent.y
                 if (y1 < y2) {
                     val i = Intent(this@BadMood, VeryBadMood::class.java)

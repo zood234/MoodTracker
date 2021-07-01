@@ -2,6 +2,7 @@ package com.example.moodtracker
 
 import android.annotation.SuppressLint
 import android.content.Intent
+import android.media.MediaPlayer
 import android.os.Bundle
 import android.util.Log
 import android.view.MotionEvent
@@ -17,6 +18,8 @@ class GreatMood : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_great_mood)
         Days.currentDay[0] = "Great"
+        var mediaPlayer = MediaPlayer.create(this, R.raw.happysound)
+        mediaPlayer.start()
         historyGreatIV.setOnClickListener {
             val intent = Intent(this, History::class.java)
             startActivity(intent)
@@ -46,11 +49,9 @@ class GreatMood : AppCompatActivity() {
     override fun onTouchEvent(touchevent: MotionEvent): Boolean {
         when (touchevent.action) {
             MotionEvent.ACTION_DOWN -> {
-                x1 = touchevent.x
                 y1 = touchevent.y
             }
             MotionEvent.ACTION_UP -> {
-                x2 = touchevent.x
                 y2 = touchevent.y
 
                 if (y1 < y2) {
