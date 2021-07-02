@@ -1,27 +1,28 @@
-package com.example.moodtracker
+package com.example.moodtracker.view
 
 import android.annotation.SuppressLint
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.MotionEvent
 import android.widget.EditText
 import androidx.appcompat.app.AlertDialog
-import kotlinx.android.synthetic.main.activity_bad_mood.*
+import androidx.appcompat.app.AppCompatActivity
+import com.example.moodtracker.*
 import kotlinx.android.synthetic.main.activity_bad_mood.commentIV
+import kotlinx.android.synthetic.main.activity_good_mood.*
 
-class BadMood : AppCompatActivity() {
+
+class GoodMood : AppCompatActivity() {
     @SuppressLint("InflateParams")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_bad_mood)
-        Days.currentDay[0] = "Angry"
+        setContentView(R.layout.activity_good_mood)
 
-        historyBadIV.setOnClickListener {
+        Days.currentDay[0] = "Happy"
+        historyGoodIV.setOnClickListener {
             val intent = Intent(this, History::class.java)
             startActivity(intent)
-
         }
 
         commentIV.setOnClickListener {
@@ -43,6 +44,7 @@ class BadMood : AppCompatActivity() {
                 show()
             }
         }
+
     }
 
     override fun onTouchEvent(touchevent: MotionEvent): Boolean {
@@ -54,19 +56,18 @@ class BadMood : AppCompatActivity() {
             }
             MotionEvent.ACTION_UP -> {
                 y2 = touchevent.y
+
                 if (y1 < y2) {
-                    val i = Intent(this@BadMood, VeryBadMood::class.java)
+                    val i = Intent(this@GoodMood, MainActivity::class.java)
                     startActivity(i)
                 }
                 if (y1 > y2) {
-                    val i = Intent(this@BadMood, MainActivity::class.java)
+                    val i = Intent(this@GoodMood, GreatMood::class.java)
                     startActivity(i)
                 }
             }
         }
         return false
-
     }
-
 
 }

@@ -13,12 +13,12 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:fullBackupContent="@xml/backup_descriptor">
-        <activity android:name=".History" />
-        <activity android:name=".VeryBadMood" />
-        <activity android:name=".BadMood" />
-        <activity android:name=".GreatMood" />
-        <activity android:name=".GoodMood" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".view.History" />
+        <activity android:name=".view.VeryBadMood" />
+        <activity android:name=".view.BadMood" />
+        <activity android:name=".view.GreatMood" />
+        <activity android:name=".view.GoodMood" />
+        <activity android:name=".view.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

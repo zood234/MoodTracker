@@ -1,4 +1,4 @@
-package com.example.moodtracker
+package com.example.moodtracker.view
 
 import android.annotation.SuppressLint
 import android.content.Intent
@@ -9,6 +9,7 @@ import android.util.Log
 import android.view.MotionEvent
 import android.widget.EditText
 import androidx.appcompat.app.AlertDialog
+import com.example.moodtracker.R
 import kotlinx.android.synthetic.main.activity_bad_mood.commentIV
 import kotlinx.android.synthetic.main.activity_very_bad_mood.*
 
@@ -20,7 +21,9 @@ class VeryBadMood : AppCompatActivity() {
 
         Days.currentDay[0] = "VAngry"
 
-        var mediaPlayer = MediaPlayer.create(this, R.raw.soundangry)
+        var mediaPlayer = MediaPlayer.create(this,
+            R.raw.soundangry
+        )
         mediaPlayer.start()
 
         historyVBadIV.setOnClickListener {
@@ -40,7 +43,7 @@ class VeryBadMood : AppCompatActivity() {
                         Days.currentDay[2] = editText.text.toString()
                     }
                 }
-                setNegativeButton("Cancel") { dialog, which ->
+                setNegativeButton("Cancel") { _, _ ->
                     Log.d("main", "Negative Button Clicked")
                 }
                 setView(dialogLayout)

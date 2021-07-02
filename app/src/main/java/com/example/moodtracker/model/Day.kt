@@ -1,4 +1,4 @@
-package com.example.moodtracker
+package com.example.moodtracker.model
 
 class Day {
     var day1 = arrayOf("", "", "")
@@ -15,5 +15,6 @@ class Day {
     currentDay[2] = comment
         return !(comment.length < 4 && comment!= "")
     }
+
 
 }

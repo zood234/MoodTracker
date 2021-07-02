@@ -1,26 +1,26 @@
-package com.example.moodtracker
+package com.example.moodtracker.view
 
 import android.annotation.SuppressLint
 import android.content.Intent
-import android.media.MediaPlayer
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.MotionEvent
 import android.widget.EditText
 import androidx.appcompat.app.AlertDialog
+import androidx.appcompat.app.AppCompatActivity
+import com.example.moodtracker.R
+import com.example.moodtracker.model.Day
 import kotlinx.android.synthetic.main.activity_main.*
 import java.io.*
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
-import java.io.File
 
 internal var myExternalFile: File? = null
 var Days = Day()
 var y1 = 1f
 var y2 = 1f
-var scrollUp = false
-var scrollDown = false
+var worseMood = false
+var goodMood = false
 
 class MainActivity : AppCompatActivity() {
     @SuppressLint("InflateParams")
@@ -67,12 +67,13 @@ class MainActivity : AppCompatActivity() {
                 y2 = touchevent.y
 
                 if (y1 < y2) {
-                    scrollUp
+                    worseMood
                     val i = Intent(this@MainActivity, BadMood::class.java)
                     startActivity(i)
+
                 }
                 if (y1 > y2) {
-                    !scrollDown
+                    goodMood
                     val i = Intent(this@MainActivity, GoodMood::class.java)
                     startActivity(i)
                 }
@@ -99,8 +100,6 @@ class MainActivity : AppCompatActivity() {
         val inputStreamReader = InputStreamReader(fileInputStream)
         val bufferedReader = BufferedReader(inputStreamReader)
         var text: String? = null
-        var file = File(fileName)
-        var fileExists = file.exists()
 
 
 

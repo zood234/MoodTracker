@@ -1,4 +1,4 @@
-package com.example.moodtracker
+package com.example.moodtracker.view
 
 import android.annotation.SuppressLint
 import android.content.Intent
@@ -9,6 +9,7 @@ import android.view.MotionEvent
 import android.widget.EditText
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
+import com.example.moodtracker.*
 import kotlinx.android.synthetic.main.activity_bad_mood.commentIV
 import kotlinx.android.synthetic.main.activity_great_mood.*
 
@@ -18,7 +19,9 @@ class GreatMood : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_great_mood)
         Days.currentDay[0] = "Great"
-        var mediaPlayer = MediaPlayer.create(this, R.raw.happysound)
+        var mediaPlayer = MediaPlayer.create(this,
+            R.raw.happysound
+        )
         mediaPlayer.start()
         historyGreatIV.setOnClickListener {
             val intent = Intent(this, History::class.java)
@@ -37,7 +40,7 @@ class GreatMood : AppCompatActivity() {
                         Days.currentDay[2] = editText.text.toString()
                     }
                 }
-                setNegativeButton("Cancel") { dialog, which ->
+                setNegativeButton("Cancel") { _, _ ->
                     Log.d("main", "Negative Button Clicked")
                 }
                 setView(dialogLayout)

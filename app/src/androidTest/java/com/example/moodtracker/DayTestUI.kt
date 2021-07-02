@@ -1,10 +1,10 @@
 package com.example.moodtracker
 
-import androidx.test.espresso.Espresso
-import androidx.test.espresso.matcher.ViewMatchers
+
 import androidx.test.ext.junit.rules.ActivityScenarioRule
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.filters.LargeTest
+import com.example.moodtracker.view.*
 import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
@@ -35,16 +35,17 @@ class DayTestUI {
             y1 = 2.2f
             y2 = 4.2f
             if (y1 < y2) {
-                assert(scrollUp)
+                assert(goodMood)
             }
         }
+
 
         @Test
         fun checkSwipeDown() {
             y1 = 7.2f
             y2 = 4.2f
             if (y1 < y2) {
-                assert(scrollDown)
+                assert(worseMood)
             }
 
 
